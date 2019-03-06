@@ -1,0 +1,24 @@
+001197  +0         +0 21Numeric                 NUMERO DE COMMUNE ET NUMERO DE  STATION DANS LA COMMUNE         
+001202  +0         +0 10Numeric                 Numero de departement elargi
+001221  +0         +0104CCITT IA                Modele de reference - reference producteur
+008202  +0         +0  5Code table              type de prevision 
+008203  +0         +0  5Code table              Caracteristique temporelle MF
+008204  +0         +0  5Code table              Caracteristique meteorologique MF
+012231  +1         +0  9Numeric                 Largeur de l'intervalle Tmin
+012232  +1         +0  9Numeric                 Largeur de l'intervalle Tmax
+020192  +0         +0  3Code table              Classe de nebulosite SYMPO      
+020220  +0         +0  6Code table              W1 (Temps present SYMPO)
+020221  +0         +0  5Code table              W2 (W1 SYMPO simplifie)
+020222  +0         +0  6Code table              Temps sensible
+020223  +1         +0  7Numeric                 Etendue de la couche nuageuse en octas
+022192  +0         +0  4Code table              Etat de la mer
+022230  +2      -1000 12m                       Seuil de dangerosite par rapport au niveaux moyen
+022231  +2      -1000 12m                       Hauteur des marees par rapport au niveau moyen
+022232  +2      -1000 12m                       Somme de la maree astronomique et de la surcote
+022233  +2      -1000 12m                       Surcote-decote par rapport au niveau moyen
+033233  +0         +0  7%                       Degre de confiance associe au parametre defini par l'intervalle qui suit
+033234  +0         +0  7%                       Probabilite d'orage
+033235  +0         +0  7%                       Probabilite de pluie faible
+033236  +0         +0  7%                       Probabilite de pluie moderee
+033237  +0         +0  7%                       Probabilite de pluie forte
+035192  +0         +0  7Numeric                 Numero de l'amendement

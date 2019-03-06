@@ -1,0 +1,94 @@
+001032  +0         +0  8Code table              Generating application
+001192  +0         +0  8Code table              Model version number
+001193  +0         +0  4Code table              Sigma_0 simulation method
+001194  +0         +0 72CCITTIA5                Carrier balloon/aircraft identifier
+001195  +0         +0 72CCITTIA5                Mobil land station identifier
+001201  +0         +0  8Code table              Generating application
+001208  +5-1073741824 31m/s                     Velocity of platform, x
+001209  +5-1073741824 31m/s                     Velocity of platform, y
+001210  +5-1073741824 31m/s                     Velocity of platform, z
+002192  +0         +0  9Degree                  Sar azimuth angle
+005217  +2-1073741824 31m                       Location of platform, x
+005232  +2         +0 16Degree                  Direction (spectral)
+006217  +2-1073741824 31m                       Location of platform, y
+006232  +5         +0 13Rads/m                  Wavenumber (spectral)
+007217  +2-1073741824 31m                       Location of platform, z
+008200  +0         +0  8Numeric                 Number of observations
+008222  +0         +0  4Code table              Generator significance
+010195  +1      -4000 20m                       Height(high accuracy)
+011049  +0         +0  9Degree true             Standard deviation wind direction
+011192  +1      -4096 13m/s                     U - component at 10 m
+011193  +1      -4096 13m/s                     V - component at 10 m
+011194  +1      -4096 13m/s                     W - component at 10 m
+013192  +0         +0  8%                       Relative humidity at 2 m
+013193  +0         +0  8%                       Relative humidity
+015202  +3     +13000 121/M**2                  Integrated electron density
+020215  -1         +0 14Pa                      Pressure at the base of cloud
+020016  -1         +0 14Pa                      Pressure at the top of cloud
+020017  +0         +0  4Code table              Cloud top description
+020031  +2         +0  7m                       Ice deposit (thickness)
+020032  +0         +0  3Code table              Rate of ice accretion
+020033  +0         +0  4Flag table              Cause of ice accretion
+020034  +0         +0  5Code table              Sea ice concetration
+020035  +0         +0  4Code table              Amount and type of ice
+020036  +0         +0  5Code table              Ice situation
+020037  +0         +0  5Code table              Ice development
+020038  +0         +0 12Degree true             Bearing of the ice edge
+020039  -1         +0 13m                       Ice distance
+020041  +0         +0  4Code table              Airframe icing
+020051  +0         +0  7%                       Amount of low clouds
+020052  +0         +0  7%                       Amount of middle clouds
+020053  +0         +0  7%                       Amount of high clouds
+020061  +0         +0 12m                       Runway visual range (rvr)
+020062  +0         +0  5Code table              State of ground (with or without snow)
+020063  +0         +0 10Code table              Special phenomena
+020192  +0         +0 14Code table              Special phenomena
+021192  +2      -5000 13dB                      Radar back scatter
+021193  +0         +0  7%                       Noise figure
+021194  +0         +0  8Numeric                 Background noise level
+021195  +0       -127  8Numeric                 Missing packet counter
+021196  +0         +0 12Flag table              Uwa product confidence
+021197  +0         +0 12Flag table              Uwi product confidence
+021198  +0         +0  8Flag table              Ura product confidence
+021199  +0         +0  7Flag table              Uat product confidence
+021200  +0         +0 15Flag table              Mwi product confidence
+021201  +0         +0 16Numeric                 Peakiness
+021202  +0         +0  4Flag table              Altimeter calibration status
+021203  +0         +0  9Flag table              Altimeter instrument mode
+021204  +2       -512 10K                       Multi/single view difference
+021205  +0         +0  8Numeric                 Spectral intensity
+021206  +0         +0  3Code table              Representation of intensity
+021207  +3         +0 14m                       Altitude correction (ionosphere)
+021208  +3         +0  9m                       Altitude correction (dry troposphere)
+021209  +3      +2000 10m                       Ltitude correction (wet troposphere)
+021210  +3         +0 11m                       Altitude correction (calibration constant)
+021211  +3         +0 10m                       Open loop correction (htl)
+021212  +3      -3000 14dB                      Open loop correction (agc)
+021213  +0         +0  7%                       Ambiguity removal confidence
+021214  +0         +0  3Code table              Uat quality summary
+021215  +0         +0  4Numeric                 Uat across-track band no.
+022191  +2         +0 20M**2*S/RAD              Spectral density
+022192  +2         +0 13s                       Spectral period
+022243  +2         +0 10m                       Standard deviation significant wave height
+025014  +0         +0  2Flag table              Radom attenuation correction
+025030  +0        -32  8dB                      Signal to noise ratio
+031031  +0         +0  1Numeric                 Data present indicator
+031192  +0         +0  1Numeric                 Data present indicator
+033001  +0         +0  1Flag table              Quality information as a 1 bit flag
+033002  +0         +0  2Flag table              Quality information as a 2 bit flag
+033003  +0         +0  3Flag table              Quality information as a 3 bit flag
+033004  +0         +0  4Flag table              Quality information as a 4 bit flag
+033007  +0         +0  7%                       % confidence
+033191  +0         +0  2Code table              Ecmwf wam qc indicator
+033193  +0         +0  3Code table              Data quality 3 bit code
+033194  +0         +0  2Code table              Data quality 2 bit code
+033200  +0         +0 31Flag table              Analysis report events
+033201  +0         +0 13Flag table              Analysis report status event
+033202  +0         +0 31Flag table              Analysis datum event flags (1)
+033203  +0         +0 11Flag table              Analysis datum event flags (2)
+033204  +0         +0 21Flag table              Analysis datum status flags
+033211  +0         +0 10Numeric                 Minimisation simulation number
+062190  +0         +0  8Code table              Statistics application
+062191  +0         +0  8Code table              Type of statistics
+063190  +0         +0  8Code table              Application deriving substituteor alternative value
+063191  +0         +0  8Code table              Q/c application

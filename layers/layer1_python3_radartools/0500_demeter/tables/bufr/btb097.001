@@ -1,0 +1,81 @@
+001025  +0         +0 24CCITTIA5                Storm identifier
+001026  +0         +0 64CCITTIA5                Wmo storm name
+001208  +5-1073741824 31m/s                     X-velocity from earth's centre in direction 0 est
+001209  +5-1073741824 31m/s                     Y-velocity from earth's centre in direction 90 est
+001210  +5-1073741824 31m/s                     Z-velocity from earth's centre in direction north pole
+002192  +0         +0  9Degree                  Sar azimuth angle
+002193  +0         +0  2Flag table              Position accuracy flag
+002194  +0         +0 14NUM                     General engineering status group
+002214  +0         +0  4Code table              Retrieval route
+002217  +0         +0  5Code table              Channel number
+004224  +0         +0  4Hour                    Hours since last position given
+004225  +0         +0  4Code table              Duration and time of current measurement. vector/doppler
+005217  +2-1073741824 31m                       X-location from earth's centre in direction 0 est
+006217  +2-1073741824 31m                       Y-location from earth's centre in direction 90 est
+006232  +5         +0 13Rads/m                  Wavenumber (spectral)
+007215  +2         +0 15Degree                  Solar zenith angle
+007217  +2-1073741824 31m                       Z-location from earth's centre in direction north pole
+008005  +0         +0  4Code table              Surface synoptic feature significance
+008213  +0         +0  5Code table              Time significance
+008215  +0         +0  6Code table              Significance of following value
+012156  +0     -32766 15Numeric                 Brightness temperature - relative probability(always negativ
+012157  +0         +0 15Numeric                 Nccs error (hirs 8)
+014193  +4         +0 14Numeric                 Microwave surface emissivity
+015202  +3     +13000 12LOG M**-2               Log of electron density
+019005  +0         +0  9DEG. TRUE               Direction of motion of feature
+019006  +2         +0 14m/s                     Speed of motion of feature
+019007  -3         +0 12m                       Effective radius of feature
+019008  +0         +0  3Code table              Vertical extent of circulation
+019009  -3         +0 12m                       Effective radius with respect to wind speeds above threshold
+021192  +2      -5000 13dB                      Radar back scatter
+021193  +0         +0  7%                       Noise figure
+021194  +0         +0  8Numeric                 Background noise level
+021195  +0       -127  8Numeric                 Missing packet counter
+021196  +0         +0 12Flag table              Uwa product confidence
+021197  +0         +0 12Flag table              Uwi product confidence
+021198  +0         +0  8Flag table              Ura product confidence
+021199  +0         +0  7Flag table              Uat quality analysis tests
+021200  +0         +0 15Flag table              Mwi product confidence
+021201  +0         +0 16Numeric                 Peakiness
+021202  +0         +0  4Flag table              Altimeter calibration status
+021203  +0         +0  9Flag table              Altimeter instrument mode
+021204  +2       -512 10K                       Multi/single view difference
+021205  +0         +0  8Numeric                 Spectral intensity
+021206  +0         +0  3Code table              Representation of intensity
+021207  +3         +0 14m                       Altitude correction (ionosphere)
+021208  +3         +0  9m                       Altitude correction (dry troposphere)
+021209  +3      +2000 10m                       Altitude correction (wet troposphere)
+021210  +3         +0 11m                       Altitude correction (calibration constant)
+021211  +3         +0 10m                       Open loop correction (htl)
+021212  +3      -3000 14dB                      Open loop correction (agc)
+021213  +0         +0  7%                       Ambiguity removal confidence
+021214  +0         +0  3Code table              Uat quality summary
+021215  +0         +0  4Numeric                 Uat across-track band number
+021250  +0         +0  8Numeric                 Across-track view number
+022243  +2         +0 10m                       Standard deviation significant wave height
+031031  +0         +0  1Flag table              Data present indicator
+031192  +0         +0  1Numeric                 Data present indicator
+033001  +0         +0  1Flag table              Quality information
+033002  +0         +0  2Flag table              Quality information - 2 bit flag
+033192  +0         +0 16Flag table              Lass quality information
+033202  +0         +0  7%                       Probability of gross error
+033212  +2         +0  9Numeric                 Number of standard deviations
+033220  +0         +0  3Code table              Kind of check
+033250  +0         +0  6Flag table              Drifter qpq2qtwq4qn quality information
+033251  +0         +0  2Code table              Quality of location
+054001  +0         +0 13Numeric                 Block number in database
+055001  +0         +0  6Code table              Model type
+055002  +0         +0  6Numeric                 Model version number
+055003  +0         +0  8Flag table              Data use/extraction indicators
+055005  +0         +0  5Code table              Model run indicator
+055006  +0         +0  5Numeric                 Lass run number
+055007  +0         +0 10Numeric                 Lass processing version number
+055011  +0         +0 12Flag table              Quality indicators for sounding data
+055013  +0         +0 10Flag table              Observation checks performed
+055014  +0         +0  3Flag table              Esa/ukmo consistency check
+055015  +0         +0  4Code table              Type of check against observation
+062190  +0         +0  8Code table              Statistics application
+062191  +0         +0  8Code table              Type of statistics
+063190  +0         +0  8Code table              Application derivingsubstitute or alternative value
+063191  +0         +0  8Code table              Q/c application
+063192  +0         +0  7%                       Confidence

@@ -1,0 +1,39 @@
+001001  +0         +0  7Numeric                 Wmo block number
+001002  +0         +0 10Numeric                 Wmo station number
+004001  +0         +0 12Year                    Year
+004002  +0         +0  4Month                   Month
+004003  +0         +0  6Day                     Day
+004004  +0         +0  5Hour                    Hour
+004005  +0         +0  6Minute                  Minute
+004006  +0         +0  6Second                  Second
+005002  +2      -9000 15Degree                  Latitude (coarse accuracy)
+005021  +2         +0 16Degree true             Bearing or azimuth
+005022  +2         +0 16Degree true             Solar azimuth
+005031  +0         +0 12Numeric                 Row number
+005033  -1         +0 16m                       Pixel size on horizontal-1
+006002  +2     -18000 16Degree                  Longitude (coarse accuracy)
+006033  -1         +0 16m                       Pixel size on horizontal-2
+021036  +1         +0 12m/s                     Radar rainfall intensity (Modif pour BUFR int)
+025006  +0         +0  3Code table              Z to r conversion
+025007  +0         +0 12Numeric                 Z to r conversion factor
+025008  +2         +0  9Numeric                 Z to r conversion exponent
+025009  +0         +0  4Flag table              Calibration method (Modif pour BUFR int)
+025010  +0         +0  4Code table              Clutter treatment
+025011  +0         +0  2Code table              Ground occultation correction (screening)
+025012  +0         +0  2Code table              Range attenuation correction
+025013  +0         +0  2Flag table              Bright-band correction
+025015  +0         +0  2Flag table              Radome attenuation correction
+025016  +5         +0  6dB/m                    Clear air attenuation correction
+025017  +0         +0  2Flag table              Precipitation attenuation correction
+029001  +0         +0  3Code table              Projection type
+029002  +0         +0  2Code table              Co-ordinate grid type
+030001  +0         +0  4Numeric                 Pixel value (4 bits)
+030002  +0         +0  8Numeric                 Pixel value (8 bits)
+030021  +0         +0 12Numeric                 Number of pixels per row
+030022  +0         +0 12Numeric                 Number of pixels per column
+030031  +0         +0  4Code table              Picture type
+030032  +0         +0 16Flag table              Combination with other data
+031001  +0         +0  8Numeric                 Delayed descriptor replication factor
+031002  +0         +0 16Numeric                 Extended delayed descriptor replication factor
+031011  +0         +0  8Numeric                 Delayed descriptor and data repetition factor
+031012  +0         +0 16Numeric                 Extended delayed descriptor and data repetition factor

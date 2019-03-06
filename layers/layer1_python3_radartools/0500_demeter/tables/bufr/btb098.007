@@ -1,0 +1,257 @@
+001192  +0         +0  8Code table              Model version number
+001193  +0         +0  4Code table              Sigma_0 simulation method
+001194  +0         +0 72CCITT IA5               Carrier balloon/aircraft identifier
+001195  +0         +0 72CCITT IA5               Mobil land station identifier
+001196  +0         +0 72CCITT IA5               Constant level balloon identifier
+001197  +0         +0 10Code table              Rtp - platform type
+001198  +0         +0 10Code table              Itp - deck id
+001199  +0         +0  4Code table              Dup - duplicate status
+001201  +0         +0  8Code table              Generating application
+001205  +0         +0 10Code table              Satellite identifier
+001208  +5-1073741824 31m/s                     Velocity of platform, x
+001209  +5-1073741824 31m/s                     Velocity of platform, y
+001210  +5-1073741824 31m/s                     Velocity of platform, z
+002192  +0         +0  9Degree                  Sar azimuth angle
+002193  +0         +0 28Flag table              1d var satellite channel(s) used
+002194  +0         +0  4Code table              Constant level balloon type
+002195  +0         +0  4Code table              Type of satellite instrumentation
+002196  +0         +0  9Code table              Satellite classification
+002197  -8         +0 26Hz                      Satellite channel centre frequency
+002198  -8         +0 26Hz                      Satellite channel band width
+002199  +0         +0  4Code table              Integrated mean humidity computational method
+002201  +0         +0  4Flag table              Simulated satellite instrument
+002202  +0         +0  4Flag table              Simulated data processing technique used
+002220  +0         +0  9Code table              Data producer
+002221  +0         +0 18m                       Segment size at nadir in x direction
+002222  +0         +0 18m                       Segment size at nadir in y direction
+002223  +0         +0  6Code table              Tovs/atovs/avhrr channel number
+002231  +0         +0  4Code table              Height assignment method
+002232  +0         +0  3Code table              Tracer correlation method
+002240  +0         +0  8Code table              Type of termodynamic sensing
+002241  +0         +0  3Code table              Type of rocket motor
+002242  +0         +0  8Code table              Type of wind sensing equipment
+002243  +0         +0  3Code table              Termodynamic correction technique
+002244  +0         +0  3Code table              Wind correction technique
+002245  +0         +0  4Code table              Method of reducing of data
+002251  +0         +0  4Code table              Radiance computational method
+002252  +0         +0 31Flag table              Satellite instrument data used in processing
+002253  +0         +0  8Code table              Humidity computational method
+002254  +0         +0  4Code table              Radiance type
+005193  +0         +0 10Numeric                 Along track row number at 50 km
+005194  +0         +0 11Numeric                 Along track row number at 25 km
+005195  +0         +0  7Numeric                 Ensemble member number
+005217  +2-1073741824 31m                       Location of platform, x
+005232  +2         +0 16Degree                  Direction (spectral)
+006193  +0         +0  6Numeric                 Cross track cell number at 50 km
+006194  +0         +0  7Numeric                 Cross track cell number at 25 km
+006217  +2-1073741824 31m                       Location of platform, y
+006232  +5         +0 13Rads/m                  Wavenumber (spectral)
+007217  +2-1073741824 31m                       Location of platform, z
+008193  +0         +0  6Code table              Time qualifier
+008194  +0         +0  4Code table              Tovs/atovs product qualifier
+008195  +0         +0  7Code table              Data type
+008200  +0         +0  8Numeric                 Number of observations
+008222  +0         +0  4Code table              Generator significance
+008223  +0         +0  7Flag table              Land/ice surface flag
+010195  +1      -4096 20m                       Height(high accuracy)
+010196  +2      -9000 15Degree                  Solar zenith angle
+010197  +0         +0  9m                       Anemometer height
+011192  +1      -4096 13m/s                     U - component at 10 m
+011193  +1      -4096 13m/s                     V - component at 10 m
+011194  +1      -4096 13m/s                     W - component at 10 m
+011195  +0         +0  7%                       Steadiness of wind
+011196  +5         +0 19m/s                     Friction velocity
+011201  +1      -4096 13m/s                     Horizontal line of sight component
+011210  +2         +0 12m/s                     1d var wind speed retreived erro(s)
+011211  +2         +0 12m/s                     Wind speed independent estimate of error(s)
+011220  +2         +0 12m/s                     Formal uncertainty in wind speed
+011221  +2         +0 15Degree true             Formal uncertainty in wind direction
+012193  +1         +0 12K                       Coldest cluster temperature
+012194  +6         +0 31w/m**2*ster*m**(-1)     Radiance
+012195 +10         +0 31w/m**2*ster*m**(-1)     Spectral radiance
+012196  +3         +0 16w/m**2*ster             Radiance
+013192  +0         +0  8%                       Relative humidity at 2 m
+013193  +0         +0  8%                       Relative humidity
+013194  +2         +0 11kg/m**2                 Total column water
+013195  +0         +0  5kg/m**2*hour            Rain rate
+013196  +0         +0  7kg/m**2                 Antecedent precipitation index
+013197  +1         +0 10kg/m**2                 Total column water vapour
+013198  +0         +0  3Code table              Rain flag
+013199  +5         +0 14kg/kg                   Specific humidity at 2 m
+013201  +7         +0 14kg/kg                   Cloud liquid water
+013202  +0         +0  8Code table              Type of surface
+013203  +2         +0 12kg/m**2*hour            1d var estimate of rain rate
+013204  +2         +0 12kg/m**2*hour            Ssmi independent estimate of rain rate
+013205  +4         +0 14kg/m**2                 Cloud liquid water path
+013206  +6         +0 14kg/m**2                 Total precipitation ice content
+013207  +6         +0 14kg/m**2                 Total cloud liquid water
+013208  +5         +0 17kg/m**2*s               Surface rain rate ( instantaneous )
+013209  +0       -256  9Numeric                 Rain possibility
+013210  +4         +0 14kg/m**2                 1d var cloud liquid water path retrieved error(s)
+013211  +2         +0 11kg/m**2                 Total precipitable water indipendent estimate of error(s)
+013212  +4         +0 14kg/m**2                 Cloud liquid water path indipendent estimate of error(s)
+013240  +3         +0 10kg/m**3                 Air density
+015202  +3     +13000 121/m**2                  Integrated electron density
+020063  +0         +0 10Code table              Special phenomena
+020192  +0         +0 14Code table              Special phenomena
+020193  +0         +0  7%                       Cloud amount in segment
+020194  +0         +0  7%                       Amount of segment cloud free
+020215  -1         +0 14Pa                      Pressure at the base of cloud
+020250  +0         +0  5Code table              Calculated surface type
+020251  +0         +0  3Code table              Ice age
+020252  +0         +0  3Code table              Ice edge
+020253  +0         +0  3Code table              Surface type
+020254  +0         +0  7%                       Ice concentration
+021192  +2      -5000 13dB                      Radar back scatter
+021193  +0         +0  7%                       Noise figure
+021194  +0         +0  8Numeric                 Background noise level
+021195  +0       -127  8Numeric                 Missing packet counter
+021196  +0         +0 12Flag table              Uwa product confidence
+021197  +0         +0 12Flag table              Uwi product confidence
+021198  +0         +0  8Flag table              Ura product confidence
+021199  +0         +0  7Flag table              Uat product confidence
+021200  +0         +0 15Flag table              Mwi product confidence
+021201  +0         +0 16Numeric                 Peakiness
+021202  +0         +0  4Flag table              Altimeter calibration status
+021203  +0         +0  9Flag table              Altimeter instrument mode
+021204  +2       -512 10K                       Multi/single view difference
+021205  +0         +0  8Numeric                 Spectral intensity
+021206  +0         +0  3Code table              Representation of intensity
+021207  +3         +0 14m                       Altitude correction (ionosphere)
+021208  +3         +0  9m                       Altitude correction (dry troposphere)
+021209  +3      +2000 10m                       Ltitude correction (wet troposphere)
+021210  +3         +0 11m                       Altitude correction (calibration constant)
+021211  +3         +0 10m                       Open loop correction (htl)
+021212  +3      -3000 14dB                      Open loop correction (agc)
+021213  +0         +0  7%                       Ambiguity removal confidence
+021214  +0         +0  3Code table              Uat quality summary
+021215  +0         +0  4Numeric                 Uat across-track band no.
+021222  +0         +0  7dB                      Doppler spectrum 0 th moment (amplitude)
+021225  +0         +0  6Flag table              Prescat product confidence
+021226  +1      -4096 13Numeric                 Backscater distance
+021230  +0         +0  3Numeric                 Number of vector ambiguities
+021231  +0         +0  3Numeric                 Index of selected wind vector
+021232  +0         +0  5Numeric                 Total nmber of sigma-0 measurements
+021233  +0         +0  5Numeric                 Number of sigma-0 usable for wind
+021234  +1     -10000 14Numeric                 Likelihood computed for solution
+021235  +0         +0  3Flag table              Wind vector cell quality flag
+021236  +1         +0  6Numeric                 Number of fore-beam sigma-0
+021237  +1         +0  6Numeric                 Number of mid-beam v-pol sigma-0
+021238  +1         +0  6Numeric                 Number of mid-beam h-pol sigma-0
+021239  +1         +0  6Numeric                 Number of aft-beam sigma-0
+021240  +2     -10000 14Numeric                 Normalized radar cross section
+021241  +5         +0 14Numeric                 Kp variance coefficient (alpha)
+021242  +6         +0 16Numeric                 Kp variance coefficient (betha)
+021243  +6         +0 16Numeric                 Kp variance coefficient (gamma)
+021244  +0         +0 15Flag table              Sigma-0 quality flag
+022062  +3         +0 14part per thousand       Salinity
+022192  +2         +0 13s                       Spectral period
+022193  +5         +0 151/m                     Mean wavenumber
+022194  +5         +0 151/m                     Peak wavenumber
+022195  +1         +0 13Degree                  Mean wave propagation direction
+022196  +1         +0 13Degree                  Peak wave propagation direction
+022197  +1         +0 13Degree                  Direction spread
+022198  +4         +0 18m**2*s/rad              Variance spectral density
+022199  +4     -10000 15Numeric                 Correlation coeff of simulated fg and observed sar spectrum
+022200  +4     -10000 15Numeric                 Correlation coeff of simulated bf and observed sar spectrum
+022201  +4     -10000 15Numeric                 Correlation coeff of ocean wave fg and extracted wave spectrum
+022202  +5         +0 21Numeric                 Error between first guess and observed sar
+022203  +5         +0 21Numeric                 Error between simulated and observed sar
+022204  +2         +0 13Second                  Mean period of waves
+022205  +4         +0 25m**2*s/rad              Spectral density
+022206  +2         +0 13Second                  Peak period of waves
+022207  +1         +0 10s                       Mean wave period
+022208  +1         +0 10s                       Peak period of 1d spectra
+022209  +6         +0 13Numeric                 Coeficient of drag with waves
+022210  +4     -10000 14Numeric                 Mean square slope of waves
+022211  +6         +0 17Numeric                 Coeficient of drag with waves
+022243  +2         +0 10m                       Standard deviation significant wave height
+025193  +3         +0 14dB                      Attenuation correction on sigma0
+025194  +0         +0  4Numeric                 Major frame count
+025197  +0         +0  5Numeric                 Antenna corrections version number
+025198  +8         +0 301/m                     Log (temp-rad central wave number)
+025199  +4     -10000 15Numeric                 Bandwidth correction coefficient 1
+025200  +5         +0 17Numeric                 Bandwidth correction coefficient 2
+025201  +4         +0 24Numeric                 Albedo-rad solar filtered irradiance
+025202 +10         +0 14Numeric                 Albedo-rad equivalent filter width
+025203  +0         +0 31Flag table              Scan line status flags for atovs
+025204  +0         +0 31Flag table              Scan line quality flags for atovs
+025205  +0         +0 31Flag table              Channel quality flags for atovs
+025206  +0         +0 31Flag table              Fov quality flags for atovs
+026193  +0         +0 12Year                    Year
+026194  +0         +0  4Month                   Month
+026195  +0         +0  6Day                     Day
+026196  +0         +0  5Hour                    Hour
+026197  +0         +0  6Minute                  Minute
+026198  +0         +0  6Second                  Second
+026200  +6         +0 20Numeric                 Location within assimilation window in time
+026201  +0         +0 26Flag table              Hours included
+027193  +2         +0 16Degree true             Solar azimuth
+030193  +0         +0  8Numeric                 Position number along scan
+031192  +0         +0  1Numeric                 Data present indicator
+033024  +0         +0  2Code table              Station elevation quality mark  (for mobile station)
+033193  +0         +0  3Code table              Data quality 3 bit code
+033194  +0         +0  2Code table              Data quality 2 bit code
+033195  +0         +0  5Code table              Ecmwf sar qc indicator
+033196  +0         +0  2Code table              Ecmwf wam qc indicator
+033197  +0         +0  3Code table              Ecmwf sar inversion qc indicator
+033198  +4         +0 14Numeric                 Minimum cost
+033199  +2         +0 11kg/m**2                 1d var total precipitable water retrieved error(s)
+033200  +0         +0 31Flag table              Analysis report events
+033201  +0         +0 13Flag table              Analysis report status event
+033202  +0         +0 31Flag table              Analysis datum event flags (1)
+033203  +0         +0 11Flag table              Analysis datum event flags (2)
+033204  +0         +0 21Flag table              Analysis datum status flags
+033205  +0         +0  4Code table              Variational analysis black list flag
+033206  +0         +0  4Code table              Variational analysis quality control flag
+033207  +0         +0  4Code table              Variational analysis departure flag
+033208  +0         +0  4Code table              Variational analysis first quesscheck flag
+033209  +0         +0  4Code table              Variational analysis final flag
+033210  +0         +0  7Numeric                 Incremental variational analysisupdate number
+033211  +0         +0 10Numeric                 Minimisation simulation number
+033212  +0         +0 10Numeric                 1d var iterration number
+033213  +1      -1000 11Numeric                 1d var radiance cost
+033214  +0         +0 11Flag table              1d var error(s)
+033215  +1      -4096 13Numeric                 Directional skill
+033216  +0         +0  3Code table              1d var surface type quality control
+033217  +0         +0  2Code table              1d var failure indicator
+033218  +2         +0 12Numeric                 1d var estimate of scattering
+033219  +2     -50000 16Numeric                 Ssmi indipendent scattering index
+033220  +0         +0 31Flag table              Variational analysis report events (1)
+033221  +0         +0 31Flag table              Variational analysis synop events (2)
+033222  +0         +0 31Flag table              Variational analysis airep events (2)
+033223  +0         +0 31Flag table              Variational analysis satob events (2)
+033224  +0         +0 31Flag table              Variational analysis dribu events (2)
+033225  +0         +0 31Flag table              Variational analysis temp events (2)
+033226  +0         +0 31Flag table              Variational analysis pilot events (2)
+033227  +0         +0 31Flag table              Variational analysis satem/tovs events (2)
+033228  +0         +0 31Flag table              Variational analysis paob events (2)
+033229  +0         +0 31Flag table              Variational analysis scatterometer events (2)
+033230  +0         +0 31Flag table              Variational analysis raw radiances events (2)
+033231  +0         +0  6Flag table              Presat summary flags
+033232  +0         +0 31Flag table              Report black list events
+033233  +0         +0 31Flag table              Variational analysis report status
+033234  +0         +0 31Flag table              Variational analysis datum status
+033236  +0         +0 31Flag table              Variational analysis datum events (1)
+033237  +0         +0 31Flag table              Variational analysis synop datumevents (2)
+033238  +0         +0 31Flag table              Variational analysis airep datumevents (2)
+033239  +0         +0 31Flag table              Variational analysis satob datumevents (2)
+033240  +0         +0 31Flag table              Variational analysis dribu datumevents (2)
+033241  +3         +0 10Numeric                 Gross error probability
+033242  +0         +0  2Code table              Gross error indicator
+033243  +0         +0 31Flag table              Variational analysis temp datum events (2)
+033244  +0         +0 31Flag table              Variational analysis pilot datumevents (2)
+033245  +0         +0 31Flag table              Variational analysis satem/tovs datum events (2)
+033246  +0         +0 31Flag table              Variational analysis paob datum events (2)
+033247  +0         +0 31Flag table              Variational analysis scatterometer datum events (2)
+033248  +0         +0 31Flag table              Variational analysis raw radiances datum events (2)
+033249  +0         +0 31Flag table              Datum black list events
+033250  +6         +0 20Numeric                 Probability of gross error
+033251  +2         +0 14Numeric                 Range of possible values
+033252  +0         +0  4Code table              Manual-automatic quality control
+033253  +0         +0  7%                       Nominal confidence threshold
+033254  +0         +0 20Flag table              Wind correlation method
+055003  +0         +0  8Flag table              Data extraction indicator
+062190  +0         +0  8Code table              Statistics application
+062191  +0         +0  8Code table              Type of statistics
+063190  +0         +0  8Code table              Application deriving substitute or alternative value

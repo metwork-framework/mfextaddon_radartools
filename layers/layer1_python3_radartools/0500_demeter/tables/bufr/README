@@ -1,0 +1,26 @@
+Ce repertoire contient les tables utilisees par le decodeur BUFR de P.LELAY.
+
+btbiii.jjj contient les tables B du centre iii (000 pour l'OMM) de version jjj.
+btdiii.jjj contient les tables D du centre iii (000 pour l'OMM) de version jjj.
+
+btb000.002: tables B BUFR OMM version 2.
+btd000.002: tables D BUFR OMM version 2
+
+btb085.001: tables locales B BUFR TOULOUSE version 1
+btd085.001: tables locales D BUFR TOULOUSE version 1
+
+btb255.001: tables locales B BUFR ETRANGER version 1
+btd255.001: tables locales D BUFR ETRANGER version 1
+
+Modifications par rapport a l'OMM:
+Dans btb085.001 0 21 036 est modifie pour correspondre a celui du logiciel KoecK:
+Echelle 1 largeur 12 unite mm/h.
+Dans btb085.001 0 25 009 est modifie pour correspondre a celui du logiciel KoecK.
+Largeur 4 au lieu de 5.
+
+Modifications par rapport a descr.txt de Koeck:
+Le descripteur 3 21 192 est errone.
+La sequence correcte est:
+321192 14 112000 031002 005031 109000 031001 104000 031001 201130
+ 031011 201000 030001 101000 031001 030001
+

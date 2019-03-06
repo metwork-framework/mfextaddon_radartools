@@ -1,0 +1,57 @@
+001192  +0         +0  8Code table              Table des composites
+001193  +0         +0  8Code table              Table des identificateurs des donnees combinees
+002192  +0         +0  8Code table              Type de radar                                               
+002193  +0         +0  8Code table              Type de calculateur                                         
+002194  +0         +0  8Code table              Indicateur du dernier etalonnage                            
+002195  -6         +0 16Hz                      Frequence du dernier etalonnage                             
+002196  +0         +0 16Numeric                 Reglage bas du dernier etalonnage                           
+002197  +0         +0 16Numeric                 Reglage haut du dernier etalonnage                          
+002198  +0         +0  8Code table              Indicateur d arret ou de panne                              
+002199  +1      -1000 16dB                      Constante radar                                             
+002200  +0         +0  2Code table              Indicateur de fonctionnement de l eliminateur echos fixes   
+002201  +0         +0  2Code table              Indicateur de positionnement en site inhibe                 
+002202  +0         +0  2Code table              Sens de balayage en azimut                                  
+005192  +0   -1024000 24m                       Distance w-e du coin nw de l image au radar                 
+005193  +0   -1024000 24m                       Distance w-e sur le plan de projection du coin nw de l'image
+005194  +0         +0  8Code Table              Indicateur du centre de projection 
+005195  +5   -9000000 25degre                   Latitude de reference
+005232  +0         +0 12Degree                  Direction (spectral)                                        
+006192  +0   -1024000 24m                       Distance n-s du coin nw de l image au radar                 
+006193  -3         +0 16m                       Distance d application de la correction en 1/r2             
+006194  -3         +0 16m                       Portee de debut de traitement d un site                     
+006195  -3         +0 16m                       Portee de fin de traitement d un site                       
+006196  -3         +0 16m                       Distance oblique maximal d'utilisation des donnees
+006197  +0   -1024000 24m                       Distance ns sur le plan de projection du coin nw de l'image
+006198  +5  -18000000 26degre                   Longitude du meridien parallele a l'axe des y
+021192  +1         +0 16dB                      Reflectivite minimale pour la valeur du pixel               
+021193  +1         +0 16dB                      Reflectivite maximale pour la valeur du pixel               
+021194  +1         +0 16BZ                      Reflectivite theorique
+021216  +1         +0 16dBZ                     Reflectivite pour la valeur du pixel
+021195  +1         +0 16BZ                      Reflectivite mesuree
+021217  +1         +0 16dBZ                     Reflectivite theorique
+021218  +1         +0 16dBZ                     Reflectivite mesuree
+022228  +0         +0  2Code table              Indicateur de fond
+025192  +0         +0  8Code table              Methode de composition dans les zones de recouvrement
+025193  +2         +0 16Numeric                 Numero de version logicielle du calculateur
+025194  +2         +0 16Numeric                 Numero de version de composite
+025195  +0         +0  8Numeric                 Numero de version de carte utilisee pour composition
+025198  +0         +0 16Numeric			Nombre de portes par tir
+025199  +0         +0  4Code Table		Methode d'integration distance
+025200  +0         +0  4Code Table		Methode d'integration azimut
+030192  +0         +0  8Code table              Mode de balayage
+031192  +0         +0 32Numeric                 Facteur super elargi de repetition differe du descripteur   
+048192  +0         +0  1Numeric                 Bit de calage                                               
+049192  +0         +0  4Code table              Cq integrite du message                                     
+049193  +0         +0  4Code table              Cq arret panne                                              
+049194  +0         +0  4Code table              Cq etalonnage                                               
+049195  +0         +0  4Code table              Cq eliminateur echos fixes                                  
+049196  +0         +0  4Code table              Cq controle temporel                                        
+049197  +0         +0  4Code table              Cq controle spatial                                         
+049198  +0         +0  4Code table              Cq controle de coherence echos fixes                        
+049199  +0         +0  4Code table              Cq comparaison avec les donnees satellitaires               
+049211  +0         +0 16Code table              Cptq images emises par le calculateur radar                 
+049212  +0         +0 16Code table              Cptq images recues par le concentrateur                     
+049213  +0         +0 16Code table              Cptq images emises par le concentrateur radar               
+049214  +0         +0 16Code table              Cptq images recues par le systeme de diffusion              
+049215  +0         +0 16Code table              Cptq images emises par le systeme de diffusion              
+049216  +0         +0 16Code table              Cptq images recues par la machine d'archivage               

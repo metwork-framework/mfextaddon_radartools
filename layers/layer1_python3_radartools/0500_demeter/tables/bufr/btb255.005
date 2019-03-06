@@ -1,0 +1,27 @@
+002181   0          0 21Flag-Table              Supplementary present weather sensor
+007192  -1          0 16Meters                  Pixel size in Z-direction
+021036   2          0 16mm*h-1                  Radar rainfall intensity
+021198   0       -640 11dBZ                     dBZ-value offset (Alpha)
+021199   1          0  7dBZ                     dBZ-value increment (Beta)
+021200   0      -1000 15m                       Height of CAPPI
+021201   0          0 14Meter                   Range-bin size
+021202   1          0  8Degree                  Azimuthal resolution
+021203  -1          0 14Meter                   Range-bin offset
+021204   1          0 12Degree                  Azimuth offset
+021205   2     -16384 15m/s                     V-value offset (av)
+021206   2          0  8m/s                     V-value increment (bv)
+021207   2          0 14m/s                     W-value offset (aw)
+021208   2          0  8m/s                     W-value increment (bw)
+029192   0          0  3Code-Table              Type of rotation ellipsoid
+029193   2     -18000 16Degree                  Long Origin
+029194   2      -9000 15Degree                  Lat Origin
+029195   0  -33554432 26Meters                  X-Offset
+029196   0  -33554432 26Meters                  Y-Offset
+029197   2      -9000 15Degree                  Standard parallel 1
+029198   2      -9000 15Degree                  Standard parallel 2
+029199   0          0 26Meters                  Semi-major axis of rotation ellipsoid
+029200   0          0 26Meters                  Semi-minor axis of rotation ellipsoid
+029201   0          0  5Code-Table              Projection type
+029202   2      -9000 15Degree                  Azimuth of initial line
+030192   0          0  3Code-Table              North south view organisation
+030193   0          0  3Code-Table              East west view organisation

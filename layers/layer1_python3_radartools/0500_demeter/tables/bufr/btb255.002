@@ -1,0 +1,12 @@
+021036   1          0 12mm*h-1                  Radar rainfall intensity
+029192   0          0  3Code-Table              Type of rotation ellipsoid
+029193   2     -18000 16Degree                  Long Origin
+029194   2      -9000 15Degree                  Lat Origin
+029195   0          0 26Meters                  False Easting
+029196   0          0 26Meters                  False Northing
+029197   2      -9000 15Degree                  Standard parallel 1
+029198   2      -9000 15Degree                  Standard parallel 2
+029199   0          0 26Meters                  Semi-major axis of rotation ellipsoid
+029200   0          0 26Meters                  Semi-minor axis of rotation ellipsoid
+030192   0          0  3Code-Table              North south view organisation
+030193   0          0  3Code-Table              East west view organisation

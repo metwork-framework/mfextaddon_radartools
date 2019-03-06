@@ -1,0 +1,9 @@
+Modifications des tables Bufr
+
+12/07/95 Modification de btb255.001 et descr.txt pour prendre en compte
+la version 1.6 du logiciel de Konrad.
+Le descripteur 3 21 192 est modifie:
+Ancien 3 21 192: 112000 031002 005031 109000 031001 104000 201130 031011
+		 201000 030001 101000 031001 030001
+Nouveau 3 21 192: 110000 031002 005031 107000 031001 102000 031012
+		 030001 101000 031001 030001

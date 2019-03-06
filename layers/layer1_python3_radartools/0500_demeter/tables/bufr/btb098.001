@@ -1,0 +1,114 @@
+001192  +0         +0  8Code table              MODEL VERSION NUMBER            
+001193  +0         +0  4Code table              SIGMA_0 SIMULATION METHOD       
+001194  +0         +0 72CCITT IA                CARRIER BALLOON/AIRCRAFT IDENTIFIER                             
+001195  +0         +0 72CCITT IA                MOBIL LAND STATION IDENTIFIER   
+001196  +0         +0 72CCITT IA                CONSTANT LEVEL BALLOON IDENTIFIER                               
+001197  +0         +0 10Code table              RTP - PLATFORM TYPE             
+001198  +0         +0 10Code table              ITP - DECK ID                   
+001199  +0         +0  4Code table              DUP - DUPLICATE STATUS          
+001201  +0         +0  8Code table              GENERATING APPLICATION          
+001205  +0         +0 10Code table              SATELLITE IDENTIFIER            
+001208  +5-1073741824 31M/S                     VELOCITY OF PLATFORM, X         
+001209  +5-1073741824 31M/S                     VELOCITY OF PLATFORM, Y         
+001210  +5-1073741824 31M/S                     VELOCITY OF PLATFORM, Z         
+002192  +0         +0  9DEGREE                  SAR AZIMUTH ANGLE               
+002193  +0         +0 28Flag table              1D VAR SATELLITE CHANNEL(S) USED
+002194  +0         +0  4Code table              CONSTANT LEVEL BALLOON TYPE     
+002195  +0         +0  4Code table              TYPE OF SATELLITE INSTRUMENTATION                               
+002201  +0         +0  4Flag table              SIMULATED SATELLITE INSTRUMENT  
+002202  +0         +0  4Flag table              SIMULATED DATA PROCESSING TECHNIQUE USED                        
+005217  +2-1073741824 31M                       LOCATION OF PLATFORM, X         
+005232  +2         +0 16DEGREE                  DIRECTION (SPECTRAL)            
+006217  +2-1073741824 31M                       LOCATION OF PLATFORM, Y         
+006232  +5         +0 13RADS/M                  WAVENUMBER (SPECTRAL)           
+007217  +2-1073741824 31M                       LOCATION OF PLATFORM, Z         
+008200  +0         +0  8Numeric                 NUMBER OF OBSERVATIONS          
+008222  +0         +0  4Code table              GENERATOR SIGNIFICANCE          
+010195  +1      -4096 20M                       HEIGHT(HIGH ACCURACY)           
+011192  +1      -4096 13M/S                     U - COMPONENT AT 10 M           
+011193  +1      -4096 13M/S                     V - COMPONENT AT 10 M           
+011194  +1      -4096 13M/S                     W - COMPONENT AT 10 M           
+011201  +1      -4096 13M/S                     HORIZONTAL LINE OF SIGHT COMPONENT                              
+013192  +0         +0  8%                       RELATIVE HUMIDITY AT 2 M        
+013193  +0         +0  8%                       RELATIVE HUMIDITY               
+013194  +2         +0 11KG/M**2                 TOTAL COLUMN WATER              
+013195  +0         +0  5KG/M**2HOUR             RAIN RATE                       
+013196  +0         +0  7KG/M**2                 ANTECEDENT PRECIPITATION INDEX  
+013197  +1         +0 10KG/M**2                 TOTAL COLUMN WATER VAPOUR       
+013198  +0         +0  3Code table              RAIN FLAG                       
+013201  +7         +0 14KG/KG                   CLOUD LIQUID WATER              
+015202  +3     +13000 121/M**2                  INTEGRATED ELECTRON DENSITY     
+020215  -1         +0 14PA                      PRESSURE AT THE BASE OF CLOUD   
+020192  +0         +0 14Code table              SPECIAL PHENOMENA               
+020250  +0         +0  5Code table              CALCULATED SURFACE TYPE         
+020251  +0         +0  3Code table              ICE AGE                         
+020252  +0         +0  3Code table              ICE EDGE                        
+020253  +0         +0  3Code table              SURFACE TYPE                    
+020254  +0         +0  7%                       ICE CONCENTRATION               
+021192  +2      -5000 13dB                      RADAR BACK SCATTER              
+021193  +0         +0  7%                       NOISE FIGURE                    
+021194  +0         +0  8Numeric                 BACKGROUND NOISE LEVEL          
+021195  +0       -127  8Numeric                 MISSING PACKET COUNTER          
+021196  +0         +0 12Flag table              UWA PRODUCT CONFIDENCE          
+021197  +0         +0 12Flag table              UWI PRODUCT CONFIDENCE          
+021198  +0         +0  8Flag table              URA PRODUCT CONFIDENCE          
+021199  +0         +0  7Flag table              UAT PRODUCT CONFIDENCE          
+021200  +0         +0 15Flag table              MWI PRODUCT CONFIDENCE          
+021201  +0         +0 16Numeric                 PEAKINESS                       
+021202  +0         +0  4Flag table              ALTIMETER CALIBRATION STATUS    
+021203  +0         +0  9Flag table              ALTIMETER INSTRUMENT MODE       
+021204  +2       -512 10K                       MULTI/SINGLE VIEW DIFFERENCE    
+021205  +0         +0  8Numeric                 SPECTRAL INTENSITY              
+021206  +0         +0  3Code table              REPRESENTATION OF INTENSITY     
+021207  +3         +0 14M                       ALTITUDE CORRECTION (IONOSPHERE)
+021208  +3         +0  9M                       ALTITUDE CORRECTION (DRY TROPOSPHERE)                           
+021209  +3      +2000 10M                       LTITUDE CORRECTION (WET TROPOSPHERE)                            
+021210  +3         +0 11M                       ALTITUDE CORRECTION (CALIBRATION CONSTANT)                      
+021211  +3         +0 10M                       OPEN LOOP CORRECTION (HTL)      
+021212  +3      -3000 14dB                      OPEN LOOP CORRECTION (AGC)      
+021213  +0         +0  7%                       AMBIGUITY REMOVAL CONFIDENCE    
+021214  +0         +0  3Code table              UAT QUALITY SUMMARY             
+021215  +0         +0  4Numeric                 UAT ACROSS-TRACK BAND NO.       
+021222  +0         +0  7dB                      DOPPLER SPECTRUM 0 TH MOMENT (AMPLITUDE)                        
+021225  +0         +0  6Flag table              PRESCAT PRODUCT CONFIDENCE      
+021226  +1      -4096 13Numeric                 BACKSCATER DISTANCE             
+022192  +2         +0 13S                       SPECTRAL PERIOD                 
+022193  +5         +0 151/M                     MEAN WAVENUMBER                 
+022194  +5         +0 151/M                     PEAK WAVENUMBER                 
+022195  +1         +0 13DEGREE                  MEAN WAVE PROPAGATION DIRECTION 
+022196  +1         +0 13DEGREE                  PEAK WAVE PROPAGATION DIRECTION 
+022197  +1         +0 13DEGREE                  DIRECTION SPREAD                
+022198  +4         +0 18M**2*S/RAD              VARIANCE SPECTRAL DENSITY       
+022199  +4     -10000 15Numeric                 CORRELATION COEFF OF SIMULATED FG AND OBSERVED SAR SPECTRUM     
+022200  +4     -10000 15Numeric                 CORRELATION COEFF OF SIMULATED BF AND OBSERVED SAR SPECTRUM     
+022201  +4     -10000 15Numeric                 CORRELATION COEFF OF OCEAN WAVE FG AND EXTRACTED WAVE SPECTRUM  
+022202  +5         +0 21Numeric                 ERROR BETWEEN FIRST GUESS AND OBSERVED SAR                      
+022203  +5         +0 21Numeric                 ERROR BETWEEN SIMULATED AND OBSERVED SAR                        
+022205  +4         +0 25M**2*S/RAD              SPECTRAL DENSITY                
+022243  +2         +0 10M                       STANDARD DEVIATION SIGNIFICANT WAVE HEIGHT                      
+031192  +0         +0  1Numeric                 DATA PRESENT INDICATOR          
+033193  +0         +0  3Code table              DATA QUALITY 3 BIT CODE         
+033194  +0         +0  2Code table              DATA QUALITY 2 BIT CODE         
+033195  +0         +0  5Code table              ECMWF SAR QC INDICATOR          
+033196  +0         +0  2Code table              ECMWF WAM QC INDICATOR          
+033197  +0         +0  3Code table              ECMWF SAR INVERSION QC INDICATOR
+033198  +4         +0 14Numeric                 MINIMUM COST                    
+033200  +0         +0 31Flag table              ANALYSIS REPORT EVENTS          
+033201  +0         +0 13Flag table              ANALYSIS REPORT STATUS EVENT    
+033202  +0         +0 31Flag table              ANALYSIS DATUM EVENT FLAGS (1)  
+033203  +0         +0 11Flag table              ANALYSIS DATUM EVENT FLAGS (2)  
+033204  +0         +0 21Flag table              ANALYSIS DATUM STATUS FLAGS     
+033210  +0         +0  7Numeric                 INCREMENTAL VARIATIONAL ANALYSISUPDATE NUMBER                   
+033211  +0         +0 10Numeric                 MINIMISATION SIMULATION NUMBER  
+033212  +0         +0 10Numeric                 1D VAR ITERRATION NUMBER        
+033213  +1      -1000 11Numeric                 1D VAR RADIANCE COST            
+033214  +0         +0 11Flag table              1D VAR ERROR(S)                 
+033231  +0         +0  6Flag table              PRESAT SUMMARY FLAGS            
+033241  +3         +0 10Numeric                 GROSS ERROR PROBABILITY         
+033242  +0         +0  2Code table              GROSS ERROR INDICATOR           
+055003  +0         +0  8Flag table              DATA EXTRACTION INDICATOR       
+062190  +0         +0  8Code table              STATISTICS APPLICATION          
+062191  +0         +0  8Code table              TYPE OF STATISTICS              
+063190  +0         +0  8Code table              APPLICATION DERIVING SUBSTITUTE OR ALTERNATIVE VALUE            
+063191  +0         +0  8Code table              Q/C APPLICATION                 
+063192  +0         +0  7%                       % CONFIDENCE                    

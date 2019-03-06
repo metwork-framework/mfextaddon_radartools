@@ -1,0 +1,402 @@
+000001  +0         +0 24CCITT IA                TABLE A: ENTRY                  
+000002  +0         +0256CCITT IA                TABLE A: DATA CATEGORY DESCRIPTION, LINE 1                      
+000003  +0         +0256CCITT IA                TABLE A: DATA CATEGORY DESCRIPTION, LINE 2                      
+000005  +0         +0 24CCITT IA                BUFR EDITION NUMBER             
+000010  +0         +0  8CCITT IA                F DESCRIPTOR TO BE ADDED OR DEFINED                             
+000011  +0         +0 16CCITT IA                X DESCRIPTOR TO BE ADDED OR DEFINED                             
+000012  +0         +0 24CCITT IA                Y DESCRIPTOR TO BE ADDED OR DEFINED                             
+000013  +0         +0256CCITT IA                ELEMENT NAME, LINE 1            
+000014  +0         +0256CCITT IA                ELEMENT NAME, LINE 2            
+000015  +0         +0192CCITT IA                UNITS NAME                      
+000016  +0         +0  8CCITT IA                UNITS SCALE SIGN                
+000017  +0         +0 24CCITT IA                UNITS SCALE                     
+000018  +0         +0  8CCITT IA                UNITS REFERENCE SIGN            
+000019  +0         +0 80CCITT IA                UNITS REFERENCE VALUE           
+000020  +0         +0 24CCITT IA                ELEMENT DATA WIDTH              
+000030  +0         +0 40CCITT IA                DESCRIPTOR DEFINING SEQUENCE    
+001001  +0         +0  7Numeric                 WMO BLOCK NUMBER                
+001002  +0         +0 10Numeric                 WMO STATION NUMBER              
+001003  +0         +0  3Numeric                 WMO REGION NUMBER/GEOGRAPHICAL AREA                             
+001004  +0         +0  3Numeric                 WMO REGION SUB-AREA             
+001005  +0         +0 17Numeric                 BUOY/PLATFORM IDENTIFIER        
+001006  +0         +0 64CCITT IA                AIRCRAFT IDENTIFIER             
+001007  +0         +0 10Code table              SATELLITE IDENTIFIER            
+001008  +0         +0 64CCITT IA                AIRCRAFT REGISTRATION NUMBER    
+001011  +0         +0 72CCITT IA                SHIP'S CALL SIGN                
+001012  +0         +0  9DEGREE TRUE             DIRECTION OF MOTION OF MOVING OBSERVING PLATFORM                
+001013  +0         +0 10M/S                     SPEED OF MOTION OF MOVING OBSERVING PLATFORM                    
+001014  +2         +0 10M/S                     PLATFORM DRIFT SPEED(HIGH PRECISION                             
+001021  +0         +0 14Numeric                 SYNOPTIC FEATURE IDENTIFIER     
+001025  +0         +0 24CCITT IA                STORM IDENTIFIER                
+001026  +0         +0 64CCITT IA                WMO STORM NAME                  
+001031  +0         +0 16Code table              GENERATING CENTRE               
+001032  +0         +0  8Code table              GENERATING APPLICATION          
+001063  +0         +0 64CCITT IA                ICAO LOCATION INDICATOR         
+002001  +0         +0  2Code table              TYPE OF STATION                 
+002002  +0         +0  4Flag table              TYPE OF INSTRUMENTATION FOR WIND MEASUREMENT                    
+002003  +0         +0  4Code table              TYPE OF MEASURING EQUIPMENT USED
+002004  +0         +0  4Code table              TYPE OF INSTRUMENTATION FOR EVAPORATION MEASUEMENT OR TYPE OF CR
+002005  +2         +0  7K                       PRECISION OF TEMPERATURE OBSERVATION                            
+002011  +0         +0  8Code table              RADIOSONDE TYPE                 
+002012  +0         +0  4Code table              RADIOSONDE COMPUTATIONAL METHOD 
+002013  +0         +0  4Code table              SOLAR AND INFRARED RADIATION CORRECTION                         
+002014  +0         +0  7Code table              TRACKING TECHNIQUE/STATUS OF SYSTEM                             
+002015  +0         +0  4Code table              RADIOSONDE COMPLETNESS          
+002021  +0         +0  9Flag table              SATELLITE INSTRUMENT DATA USED IN PROCESSING                    
+002022  +0         +0  8Flag table              SATELLITE DATA PROCESSING TECHNIQUE USED                        
+002023  +0         +0  4Code table              CLOUD MOTION COMPUTATIONAL METHOD                               
+002024  +0         +0  4Code table              INTEGRATED MEAN HUMIDITY COMPUTATIONAL METHOD                   
+002025  +0         +0 25Flag table              SATELLITE CHANNEL(S) USED IN COMPUTATION                        
+002026  +2         +0 12M                       CROSS TRACK RESOLUTION          
+002027  +2         +0 12M                       ALONG TRACK RESOLUTION          
+002031  +0         +0  5Code table              METHOD OF CURRENT MEASUREMENT   
+002032  +0         +0  2Code table              INDICATOR FOR DIGITIZATION      
+002033  +0         +0  3Code table              METHOD OF SALINITY/DEPTH MEASUREMENT                            
+002034  +0         +0  5Code table              DROGUE TYPE                     
+002035  +0         +0  9M                       CABLE LENGTH                    
+002036  +0         +0  2Code table              BUOY TYPE                       
+002041  +0         +0  6Code table              METHOD FOR ESTIMATING REPORTS RELATED TO SYNOPTIC FEATURES      
+002061  +0         +0  3Code table              AIRCRAFT NAVIGATIONAL SYSTEM    
+002062  +0         +0  4Code table              TYPE OF AIRCRAFT DATA RELAY SYSTEM                              
+002063  +2     -18000 16DEGREE                  AIRCRAFT ROLL ANGLE             
+002070  +0         +0  4Code table              ORIGINAL SPECIFICATION OF LATITUDE/LONGITUDE                    
+002101  +0         +0  4Code table              TYPE OF ANTENNA                 
+002102  +0         +0  8M                       ANTENNA HEIGHT ABOVE TOWER BASE 
+002103  +0         +0  2Flag table              RADOME                          
+002104  +0         +0  4Code table              ANTENNA POLARISATION            
+002105  +0         +0  6dB                      MAXIMUM ANTENNA GAIN            
+002106  +1         +0  6DEGREE                  3-dB BEAMWIDTH                  
+002107  +0         +0  6dB                      SIDELOBE SUPPRESION             
+002108  +0         +0  6dB                      CROSSPOL DISCRIMINATION(ON AXIS)
+002109  +2         +0 12DEGREE/S                ANTENNA SPEED(AZIMUTH)          
+002110  +2         +0 12DEGREE/S                ANTENNA SPEED(ELEVATION)        
+002111  +1         +0 10DEGREE                  RADAR INCIDENCE ANGLE           
+002112  +1         +0 12DEGREE                  RADAR LOOK ANGLE                
+002113  +0         +0  4Numeric                 NUMBER OF AZIMUTH LOOKS         
+002114  +0         +0 15M**2                    ANTENNA EFFECTIVE SRFACE AREA   
+002121  -8         +0  7Hz                      MEAN FREQUENCY                  
+002122  -6       -128  8Hz                      FREQUENCY AGILITY RANGE         
+002123  -4         +0  7W                       PEAK POWER                      
+002124  -1         +0  7W                       AVERAGE POWER                   
+002125  -1         +0  8Hz                      PULSE REPETITION FREQUENCY      
+002126  +7         +0  6S                       PULSE WIDTH                     
+002127  -6         +0  7Hz                      RECEIVER INTERMEDIATE FREQUENCY 
+002128  -5         +0  6Hz                      INTERMEDIATE FREQUENCY BANDWIDTH
+002129  +0       -150  5dB                      MINIMUM DETECTABLE SIGNAL       
+002130  +0         +0  7dB                      DYNAMIC RANGE                   
+002131  +0         +0  2Flag table              SENSITIVITY TIME CONTROL        
+002132  +2         +0  6DEGREE                  AZIMUTH POINTING ACCURACY       
+002133  +2         +0  6DEGREE                  ELEVATION POINTING ACCURACY     
+002134  +2         +0 16DEGREE                  ANTENNA BEAM AZIMUTH            
+002135  +2      -9000 15DEGREE                  ANTENNA ELEVATION               
+004001  +0         +0 12YEAR                    YEAR                            
+004002  +0         +0  4MONTH                   MONTH                           
+004003  +0         +0  6DAY                     DAY                             
+004004  +0         +0  5HOUR                    HOUR                            
+004005  +0         +0  6MINUTE                  MINUTE                          
+004006  +0         +0  6SECOND                  SECOND                          
+004011  +0      -1024 11YEAR                    TIME INCREMENT                  
+004012  +0      -1024 11MONTH                   TIME INCREMENT                  
+004013  +0      -1024 11DAY                     TIME INCREMENT                  
+004014  +0      -1024 11HOUR                    TIME INCREMENT                  
+004015  +0      -2048 12MINUTE                  TIME INCREMENT                  
+004016  +0      -4096 13SECOND                  TIME INCREMENT                  
+004021  +0      -1024 11YEAR                    TIME PERIOD OR DISPLACEMENT     
+004022  +0      -1024 11MONTH                   TIME PERIOD OR DISPLACEMENT     
+004023  +0      -1024 11DAY                     TIME PERIOD OR DISPLACEMENT     
+004024  +0      -2048 12HOUR                    TIME PERIOD OR DISPLACEMENT     
+004025  +0      -2048 12MINUTE                  TIME PERIOD OR DISPLACEMENT     
+004026  +0      -4096 13SECOND                  TIME PERIOD OR DISPLACEMENT     
+004043  +0         +0  9DAY                     DAY OF THE YEAR                 
+005001  +5   -9000000 25DEGREE                  LATITUDE (HIGH ACCURACY)        
+005002  +2      -9000 15DEGREE                  LATITUDE (COARSE ACCURACY)      
+005011  +5   -9000000 25DEGREE                  LATITUDE INCREMENT (HIGH ACCURACY)                              
+005012  +2      -9000 15DEGREE                  LATITUDE INCREMENT (COARSE ACCURACY)                            
+005021  +2         +0 16DEGREE TRUE             BEARING OR AZIMUTH              
+005022  +2         +0 16DEGREE TRUE             SOLAR AZIMUTH                   
+005031  +0         +0 12Numeric                 ROW NUMBER                      
+005033  -1         +0 16M                       PIXEL SIZE ON HORIZONTAL-1      
+005040  +0         +0 24Numeric                 ORBIT NUMBER                    
+005041  +0         +0  8Numeric                 SCAN LINE NUMBER                
+005042  +0         +0  6Numeric                 CHANNEL NUMBER                  
+005043  +0         +0  8Numeric                 FIELD OF VIEW NUMBER            
+005052  +0         +0  5Numeric                 CHANNEL NUMBER INCREMENT        
+005053  +0         +0  5Numeric                 FIELD OF VIEW NUMBER INCREMENT  
+006001  +5  -18000000 26DEGREE                  LONGITUDE (HIGH ACCURACY)       
+006002  +2     -18000 16DEGREE                  LONGITUDE (COARSE ACCURACY)     
+006011  +5  -18000000 26DEGREE                  LONGITUDE INCREMENT (HIGH ACCURACY)                             
+006012  +2     -18000 16DEGREE                  LONGITUDE INCREMENT (COARSE ACCURACY)                           
+006021  -1         +0 13M                       DISTANCE                        
+006031  +0         +0 12Numeric                 COLUMN NUMBER                   
+006033  -1         +0 16M                       PIXEL SIZE ON HORIZONTAL-2      
+007001  +0       -400 15M                       HEIGHT OF STATION               
+007002  -1        -40 16M                       HEIGHT OR ALTITUDE              
+007003  -1       -400 17M**2/S**2               GEOPOTENTIAL                    
+007004  -1         +0 14PA                      PRESSURE                        
+007005  +0       -400 12M                       HEIGHT INCREMENT                
+007006  +0         +0 15M                       HEIGHT ABOVE STATION            
+007021  +2      -9000 15DEGREE                  ELEVATION                       
+007022  +2      -9000 15DEGREE                  SOLAR ELEVATION                 
+007061  +2         +0 14M                       DEPTH BELOW LAND SURFACE        
+007062  +1         +0 17M                       DEPTH BELOW SEA SURFACE         
+007190  +1      -1024 12M                       HEIGHT INCREMENT                
+008001  +0         +0  7Flag table              VERTICAL SOUNDING SIGNIFICANCE  
+008002  +0         +0  6Code table              VERTICAL SIGNIFICANCE (SURFACE OBSERVATIONS)                    
+008003  +0         +0  6Code table              VERTICAL SIGNIFICANCE (SATELLITE OBSERVATIONS)                  
+008004  +0         +0  3Code table              PHASE OF AIRCRAFT FLIGHT        
+008005  +0         +0  4Code table              SURFACE SYNOPTIC FEATURE SIGNIFICANCE                           
+008011  +0         +0  6Code table              HORIZONTAL SIGNIFICANCE         
+008012  +0         +0  2Code table              LAND/SEA QUALIFIER              
+008021  +0         +0  5Code table              TIME SIGNIFICANCE               
+008022  +0         +0 16Numeric                 TOTAL NUMBER(WITH RESPECT TO ACCUMULATION OR AVERAGE)           
+008023  +0         +0  6Code table              FIRST ORDER STATISTICS          
+008024  +0         +0  6Code table              DIFFERENCE STATISTICS           
+010001  +0       -400 15M                       HEIGHT OF LAND SURFACE          
+010002  -1        -40 16M                       HEIGHT                          
+010003  -1       -400 17M**2/S**2               GEOPOTENTIAL                    
+010004  -1         +0 14PA                      PRESSURE                        
+010050  +2         +0 16M                       STANDARD DEVIATION ALTITUDE     
+010051  -1         +0 14PA                      PRESSURE REDUCED TO MEAN SEA LEVEL                              
+010052  -1         +0 14PA                      ALTIMETER SETTING (QNH)         
+010060  -1      -1024 11PA                      PRESSURE CHANGE                 
+010061  -1       -500 10PA                      3 HOUR PRESSURE CHANGE          
+010062  -1      -1000 11PA                      24 HOUR PRESSURE CHANGE         
+010063  +0         +0  4Code table              CHARACTERISTIC OF PRESSURE TENDENCY                             
+011001  +0         +0  9DEGREE TRUE             WIND DIRECTION                  
+011002  +1         +0 12M/S                     WIND SPEED                      
+011003  +1      -4096 13M/S                     U-COMPONENT                     
+011004  +1      -4096 13M/S                     V-COMPONENT                     
+011005  +1       -512 10PA/S                    W-COMPONENT                     
+011006  +2      -4096 13M/S                     W-COMPONENT                     
+011011  +0         +0  9DEGREE TRUE             WIND DIRECTION AT 10 M          
+011012  +1         +0 12M/S                     WIND SPEED AT 10 M              
+011013  +0         +0  9DEGREE TRUE             WIND DIRECTION AT 5 M           
+011014  +1         +0 12M/S                     WIND SPEED AT 5 M               
+011021  +9     -65536 171/S                     RELATIVE VORTICITY              
+011022  +9     -65536 171/S                     DIVERGENCE                      
+011023  -2     -65536 17M**2/S                  VELOCITY POTENTIAL              
+011031  +0         +0  4Code table              DEGREE OF TURBULENCE            
+011032  -1        -40 16M                       HEIGHT OF BASE OF TURBULENCE    
+011033  -1        -40 16M                       HEIGHT OF TOP OF TURBULENCE     
+011034  +1      -1024 11M/S                     VERTICAL GUST VELOCITY          
+011035  +2      -8192 14M/S                     VERTICAL GUST ACCELERATION      
+011036  +1         +0 10M/S                     MAXIMUM DERIVED EQUIVALENT VERTICAL GUST                        
+011041  +1         +0 12M/S                     MAXIMUM WIND SPEED (GUSTS)      
+011042  +1         +0 12M/S                     MAXIMUM WIND SPEED (10 MIN MEAN WIND)                           
+011049  +0         +0  9DEGREE TRUE             STANDARD DEVIATION WIND DIRECTION                               
+011050  +1         +0 12M/S                     STANDARD DEVIATION WIND SPEED   
+011051  +1         +0  8M/S                     STANDARD DEVIATION W COMPONENT  
+011061  +1         +0 12M/S                     ABSOLUTE WIND SHEAR IN 1 KM LAYER BELOW                         
+011062  +1         +0 12M/S                     ABSOLUTE WIND SHEAR IN 1 KM LAYER ABOVE                         
+012001  +1         +0 12K                       TEMPERATURE/DRY BULB TEMPERATURE
+012002  +1         +0 12K                       WET BULB TEMPERATURE            
+012003  +1         +0 12K                       DEW POINT TEMPERATURE           
+012004  +1         +0 12K                       DRY BULB TEMPERATURE AT 2M      
+012005  +1         +0 12K                       WET BULB TEMPERATURE AT 2M      
+012006  +1         +0 12K                       DEW POINT TEMPERATURE AT 2M     
+012007  +1         +0 12K                       VIRTUAL TEMPERATURE             
+012011  +1         +0 12K                       MAXIMUM TEMPERATURE,AT HEIGHT AND OVER PERIOD SPECIFIED         
+012012  +1         +0 12K                       MINIMUM TEMPERATURE,AT HEIGHT AND OVER PERIOD SPECIFIED         
+012013  +1         +0 12K                       GROUND MINIMUM TEMPERATURE PAST 12 HOURS                        
+012014  +1         +0 12K                       MAXIMUM TEMPERATURE AT 2M, PAST 12 HOURS                        
+012015  +1         +0 12K                       MINIMUM TEMPERATURE AT 2M, PAST 12 HOURS                        
+012016  +1         +0 12K                       MAXIMUM TEMPERATURE AT 2M, PAST 24 HOURS                        
+012017  +1         +0 12K                       MINIMUM TEMPERATURE AT 2M, PAST 24 HOURS                        
+012030  +1         +0 12K                       SOIL TEMPERATURE                
+012061  +1         +0 12K                       SKIN TEMPERATURE                
+012062  +1         +0 12K                       EQUIVALENT BLACK BODY TEMPERATURE                               
+012063  +1         +0 12K                       BRIGHTNESS TEMPERATURE          
+013001  +5         +0 14KG/KG                   SPECIFIC HUMIDITY               
+013002  +5         +0 14KG/KG                   MIXING RATIO                    
+013003  +0         +0  7%                       RELATIVE HUMIDITY               
+013004  -1         +0 10PA                      VAPOUR PRESSURE                 
+013005  +3         +0  7KG/M**3                 VAPOUR DENSITY                  
+013006  -1        -40 16M                       MIXING HEIGHT                   
+013011  +1         -1 14KG/M**2                 TOTAL PRECIPITATION/TOTAL WATER EQUIVALENT                      
+013012  +2         -2 12M                       DEPTH OF FRESH SNOW             
+013013  +2         -2 16M                       TOTAL SNOW DEPTH                
+013014  +4         +0 12KG/(M**2)S              RAINFALL/WATER EQUIVALENT OF SNOW (AVERAGE RATE)                
+013015  +7         +0 12M/S                     SNOWFALL (AVERAGE RATE)         
+013016  +0         +0  7KG/M**2                 PRECIPITABLE WATER              
+013019  +1         -1 14KG/M**2                 TOTAL PRECIPITATION PAST 1 HOUR 
+013020  +1         -1 14KG/M**2                 TOTAL PRECIPITATION PAST 3 HOURS
+013021  +1         -1 14KG/M**2                 TOTAL PRECIPITATION PAST 6 HOURS
+013022  +1         -1 14KG/M**2                 TOTAL PRECIPITATION PAST 12 HOURS                               
+013023  +1         -1 14KG/M**2                 TOTAL PRECIPITATION PAST 24 HOURS                               
+013031  +0         +0  7KG/M**2                 EVAPOTRANSPIRATION              
+013032  +1         +0  8KG/M**2                 EVAPORATION/EVAPOTRANSPIRATION  
+013041  +0         +0  4Code table              PASQUILL-GILLFORD STABILITY CATEGORY                            
+014001  -3      -2048 12J/M**2                  LONG-WAVE RADIATION,INTEGRATED OVER 24 HOURS                    
+014002  -3      -2048 12J/M**2                  LONG-WAVE RADIATION,INTEGRATED OVER PERIOD SPECIFIED            
+014003  -3      -2048 12J/M**2                  SHORT-WAVE RADIATION,INTEGRATED OVER 24 HOURS                   
+014004  -3      -2048 12J/M**2                  SHORT-WAVE RADIATION,INTEGRATED OVER PERIOD SPECIFIED           
+014011  -3      -2048 12J/M**2                  NET LONG-WAVE RADIATION,INTEGRATED OVER 24 HOURS                
+014012  -3      -2048 12J/M**2                  NET LONG-WAVE RADIATION,INTEGRATED OVER PERIOD SPECIFIED        
+014013  -3      -2048 12J/M**2                  NET SHORT-WAVE RADIATION,INTEGRATED OVER 24 HOURS               
+014014  -3      -2048 12J/M**2                  NET SHORT-WAVE RADIATION,INTEGRATED OVER PERIOD SPECIFIED       
+014015  -4     -16384 15J/M**2                  NET RADIATION INTEGRATED OVER 24HOURS                           
+014016  -4     -16384 15J/M**2                  NET RADIATION,INTEGRATED OVER PERIOD SPECIFIED                  
+014017  -3      -2048 12J/M**2                  INSTANTANEOUS LONG-WAVE RADIATION                               
+014018  -3      -2048 12J/M**2                  INSTANTANEOUS SHORT-WAVE RADIATION                              
+014020  -4         +0 15J/M**2                  GLOBAL SOLAR RADIATION INTEGRATED OVER 24 HOURS                 
+014021  -4         +0 15J/M**2                  GLOBAL RADIATION INTEGRATED OVERPERIOD SPECIFIED                
+014022  -4         +0 15J/M**2                  DIFFUSE SOLAR RADIATION INTEGRATED OVER 24 HOURS                
+014023  -4         +0 15J/M**2                  DIFFUSE SOLAR RADIATION INTEGRATED OVER PERIOD SPECIFIED        
+014024  -4         +0 15J/M**2                  DIRECT SOLAR RADIATION INTEGRATED OVER 24 HOURS                 
+014025  -4         +0 15J/M**2                  DIRECT SOLAR RADIATION INTEGRATED OVER PERIOD SPECIFIED         
+014031  +0         +0 11MINUTE                  TOTAL SUNSHINE                  
+014032  +0         +0 10HOUR                    TOTAL SUNSHINE                  
+015001  +0         +0 10DOBSON                  OZON                            
+019001  +0         +0  6Code table              TYPE OF SYNOPTIC FEATURE        
+019002  -2         +0 12M                       EFFECTIVE RADIUS OF FEATURE     
+019003  +0         +0  8M/S                     WIND SPEED THRESHOLD            
+019004  -2         +0 12M                       EFFECTIVE RADIUS WITH RESPECT TO WIND SPEEDS ABOVE THRESHOLD    
+019005  +0         +0  9DEGREE TRUE             DIRECTION OF MOTION OF FEATURE  
+019006  +2         +0 14M/S                     SPEED OF MOTION OF FEATURE      
+019007  -3         +0 12M                       EFFECTIVE RADIUS OF FEATURE     
+019008  +0         +0  3Code table              VERTICAL EXTENT OF CIRCULATION  
+019009  -3         +0 12M                       EFFECTIVE RADIUS WITH RESPECT TOWIND SPEEDS ABOVE TRESHOLD      
+020001  -1         +0 13M                       HORIZONTAL VISIBILITY           
+020002  -1         +0  7M                       VERTICAL VISIBILITY             
+020003  +0         +0  9Code table              PRESENT WEATHER                 
+020004  +0         +0  5Code table              PAST WEATHER (1)                
+020005  +0         +0  5Code table              PAST WEATHER (2)                
+020010  +0         +0  7%                       CLOUD COVER (TOTAL)             
+020011  +0         +0  4Code table              CLOUD AMOUNT                    
+020012  +0         +0  6Code table              CLOUD TYPE                      
+020013  -1        -40 11M                       HEIGHT OF BASE OF CLOUD         
+020014  -1        -40 11M                       HEIGHT OF TOP OF CLOUD          
+020016  -1         +0 14PA                      PRESSURE AT THE TOP OF CLOUD    
+020017  +0         +0  4Code table              CLOUD TOP DESCRIPTION           
+020031  +2         +0  7M                       ICE DEPOSIT (THICKNESS)         
+020032  +0         +0  3Code table              RATE OF ICE ACCRETION           
+020033  +0         +0  4Flag table              CAUSE OF ICE ACCRETION          
+020034  +0         +0  5Code table              SEA ICE CONCETRATION            
+020035  +0         +0  4Code table              AMOUNT AND TYPE OF ICE          
+020036  +0         +0  5Code table              ICE SITUATION                   
+020037  +0         +0  5Code table              ICE DEVELOPMENT                 
+020038  +0         +0 12DEGREE TRUE             BEARING OF THE ICE EDGE         
+020039  -1         +0 13M                       ICE DISTANCE                    
+020041  +0         +0  4Code table              AIRFRAME ICING                  
+020051  +0         +0  7%                       AMOUNT OF LOW CLOUDS            
+020052  +0         +0  7%                       AMOUNT OF MIDDLE CLOUDS         
+020053  +0         +0  7%                       AMOUNT OF HIGH CLOUDS           
+020061  +0         +0 12M                       RUNWAY VISUAL RANGE (RVR)       
+020062  +0         +0  5Code table              STATE OF GROUND (WITH OR WITHOUT SNOW)                          
+020063  +0         +0 14Code table              SPECIAL PHENOMENA               
+021001  +0        -64  7dB                      HORIZONTAL REFLECTIVITY         
+021002  +0        -64  7dB                      VERTICAL REFLECTIVITY           
+021003  +1         -5  7dB                      DIFFERENTIAL REFLECTIVITY       
+021005  +0        -65  6dB                      LINEAR DEPOLARISATION RATIO     
+021006  +0        -65  6dB                      CIRCULAR DEPOLARIZATION RATIO   
+021011  +0       -128  8M/S                     DOPPLER MEAN VELOCITY IN X-DIRECTION                            
+021012  +0       -128  8M/S                     DOPPLER MEAN VELOCITY IN Y-DIRECTION                            
+021013  +0       -128  8M/S                     DOPPLER MEAN VELOCITY IN Z-DIRECTION(VZ)                        
+021014  +1      -4096 13M/S                     DOPPLER MEAN VELOCITY RADIAL    
+021017  +1      -4096  8M/S                     DOPPLER VELOCITY SPECTRAL WIDTH 
+021021  -3         +0  4M                       ECHO TOPS                       
+021031  +0         +0  7KG/M**2                 VERTICALLY INTEGRATED LIQUID-WATER CONTENT                      
+021036  +7         +0 12M/S                     RADAR RAINFALL INTENSITY        
+021041  -2         +0  8M                       BRIGHT-BAND HEIGHT              
+021051  +0       -256  8dB                      SIGNAL POWER ABOVE 1 mW         
+022001  +0         +0  9DEGREE TRUE             DIRECTION OF WAVES              
+022002  +0         +0  9DEGREE TRUE             DIRECTION OF WIND WAVES         
+022003  +0         +0  9DEGREE TRUE             DIRECTION OF SWELL WAVES        
+022004  +0         +0 12DEGREE TRUE             DIRECTION OF CURRENT            
+022011  +0         +0  6S                       PERIOD OF WAVES                 
+022012  +0         +0  6S                       PERIOD OF WIND WAVES            
+022013  +0         +0  6S                       PERIOD OF SWELL WAVES           
+022021  +1         +0 10M                       HEIGHT OF WAVES                 
+022022  +1         +0 10M                       HEIGHT OF WIND WAVES            
+022023  +1         +0 10M                       HEIGHT OF SWELL WAVES           
+022025  +2         +0 10M                       STANDARD DEVIATION WAVE HEIGHT  
+022031  +2         +0 13M/S                     SPEED OF CURRENT                
+022042  +1         +0 12K                       SEA TEMPERATURE                 
+022043  +2         +0 15K                       SEA TEMPERATURE                 
+022044  +1         +0 14M/S                     SOUND VELOCITY                  
+022050  +2         +0  8K                       STANDARD DEVIATION SEA SURFACE TEMPERATURE                      
+022061  +0         +0  4Code table              STATE OF SEA                    
+022062  +3         +0 14%.                      SALINITY                        
+022063  +0         +0 14M                       TOTAL WATER DEPTH               
+022191  +2         +0 20M**2*S/RAD              SPECTRAL DENSITY                
+023001  +0         +0  3Code table              ACCIDENT EARLY NOTIFICATION-ARTICLE APPLICABLE                  
+023002  +0         +0  5Code table              ACTIVITY OR FACILITY INVOLVED ININCIDENT                        
+023003  +0         +0  3Code table              TYPE OF RELEASE                 
+023004  +0         +0  3Code table              COUNTERMEASURES TAKEN NEAR BORDER                               
+023005  +0         +0  2Code table              COUSE OF INCIDENT               
+023006  +0         +0  3Code table              INCIDENT SITUATION              
+023007  +0         +0  3Code table              CHARACTERISTICS OF RELEASE      
+023008  +0         +0  2Code table              STATE OF CURRENT RELEASE        
+023009  +0         +0  2Code table              STATE OF EXPECTED RELEASE       
+023016  +0         +0  2Code table              POSSIBILITY OF SIGNIFICANT CHEMICAL TOXIC HEALTH EFFECT         
+023017  +6         +0 20M**3/S                  FLOW DISCHARGE OF MAJOR RECEPIENT                               
+023018  +0         +0  3Code table              RELEASE BEHAVIOUR OVER TIME     
+023019  +0     -15000 17M                       ACTUAL RELEASE HEIGHT           
+023021  +0     -15000 17M                       EFFECTIVE RELEASE HEIGHT        
+023022  +0         +0 24M                       DISTANCE OF RELEASE POINT OR SITE OF INCIDENT                   
+023023  +1         +0 12M/S                     MAIN TRANSPORT SPEED IN THE ATMOSPHERE                          
+023024  +2         +0 13M/S                     MAIN TRANSPORT SPEED WATER      
+023025  +2         +0 13M/S                     MAIN TRANSPORT SPEED IN GROUND WATER                            
+023027  +0         +0  9DEGREE TRUE             MAIN TRANSPORT DIRECTION IN THE ATMOSPHERE                      
+023028  +0         +0  9DEGREE TRUE             MAIN TRANSPORT DIRECTION IN WATER                               
+023029  +0         +0  9DEGREE TRUE             MAIN TRANSPORT DIRECTION IN GROUND WATER                        
+023031  +0         +0  2Code table              POSSIBILITY THAT PLUME WILL ENCOUNTER PRECIPITATION IN STATE IN 
+023032  +0         +0  2Code table              PLUME WILL ENCOUNTER CHANGE IN WIND DIRECTION AND/OR SPEED FLAG 
+024001 -11         +0 28Bq                      ESTIMATE OF AMOUNT OF RADIOACTIVITY RELEASED UP TO SPECIFIED TIM
+024002 -11         +0 28Bq                      ESTIMATED MAXIMUM POTENTIAL RELEASE                             
+024003  +0         +0  5Code table              COMPOSITION OF RELEASE          
+024004  +0         +0 16CCITT IA                ELEMENT NAME                    
+024005  +0         +0  9Numeric                 ISOTOPE MASS                    
+024011  +2         +0 32mSv                     DOSE                            
+024012  +2         +0 32mSv                     TRAJECTORY DOSE (DEFINED LOCATION AND EXPECTED TIME)            
+024013  +2         +0 32mSv                     GAMMA DOSE IN AIR ALONG THE MAINTRANSPORT PATH(DEFINED LOCATION 
+024021  +2         +0 32Bq/M**3                 AIR CONCENTRATION(OF NAMED ISOTOPE TYPE INCLUDING GROSS BETA    
+024022  +2         +0 32Bq/L                    CONCENTRATION IN PRECIPITATION ( OF NAMED ISOTOPE TYPE)         
+025001  -1         +0  6M                       RANGE-GATE LENGTH               
+025002  +0         +0  4Numeric                 NUMBER OF GATES AVERAGED        
+025003  +0         +0  8Numeric                 NUMBER OF INTEGRATED PULSES     
+025004  +0         +0  2Code table              ECHO PROCESSING                 
+025005  +0         +0  2Code table              ECHO INTEGRATION                
+025006  +0         +0  3Code table              Z TO R CONVERSION               
+025007  +0         +0 12Numeric                 Z TO R CONVERSION FACTOR        
+025008  +2         +0  9Numeric                 Z TO R CONVERSION EXPONENT      
+025009  +0         +0  4Flag table              CALIBRATION METHOD              
+025010  +0         +0  4Code table              CLUTTER TREATMENT               
+025011  +0         +0  2Code table              GROUND ACCULTATION CORRECTION(SCREENING)                        
+025012  +0         +0  2Code table              RANGE ATTENUATION CORRECTION    
+025013  +0         +0  2Flag table              BRIGHT-BAND CORRECTION          
+025014  +0         +0  2Flag table              RADOM ATTENUATION CORRECTION    
+025016  +5         +0  6dB/M                    CLEAR-AIR ATTENUATION CORRECTION
+025017  +0         +0  2Flag table              PRECIPITATION ATTENUATION CORRECTION                            
+025018  +7         +0  6Numeric                 A TO Z LAW FOR ATTENUATION FACTOR                               
+025019  +2         +0  7Numeric                 A TO Z LAW FOR ATTENUATION EXPONENT                             
+025020  +0         +0  2Code table              MEAN SPEED ESTIMATION           
+025021  +0         +0  8Flag table              WIND COMPUTATION EHANCEMENT     
+025030  +0        -32  8dB                      SIGNAL TO NOISE RATIO           
+025032  +0         +0  2Code table              WIND PROFILER MODE INFORMATION  
+025033  +0         +0  2Code table              NOAA WIND PROFILER SUBMODE INFORMATION                          
+025034  +0         +0  4Flag table              NOAA WIND PROFILER QUALITY CONTROL TEST RESULTS                 
+027001  +5   -9000000 25DEGREE                  LATITUDE(HIGH ACCURACY)         
+027002  +2      -9000 15DEGREE                  LATITUDE(COARSE ACCURACY)       
+027003  +2      -9000 15DEGREE                  ALTERNATE LATITUDE              
+027020  +0         +0 16Numeric                 SATELLITE LOCATION COUNTER      
+028001  +5  -18000000 26DEGREE                  LONGITUDE(HIGH ACCURACY)        
+028002  +2     -18000 16DEGREE                  LONGITUDE(COARSE ACCURACY)      
+028003  +2     -18000 16DEGREE                  ALTERNATE LONGITUDE             
+029001  +0         +0  3Code table              PROJECTION TYPE                 
+029002  +0         +0  3Code table              CO-ORDINATE GRID TYPE           
+030001  +0         +0  4Numeric                 PIXEL VALUE(4 BITS)             
+030021  +0         +0 12Numeric                 NUMBER OF PIXELS PER ROW        
+030022  +0         +0 12Numeric                 NUMBER OF PIXELS PER COLUMN     
+030031  +0         +0  4Code table              PICTURE TYPE                    
+030032  +0         +0 16Flag table              COMBINATION WITH OTHER DATA     
+031001  +0         +0  8Numeric                 DELAYED DESCRIPTOR REPLICATION FACTOR                           
+031002  +0         +0 16Numeric                 EXTENDED DELAYED DESCRIPTOR REPLICATION FACTOR                  
+031011  +0         +0  8Numeric                 DELAYED DESCRIPTOR AND DATA REPETITION FACTOR                   
+031012  +0         +0 16Numeric                 EXTENDED DELAYED DESCRIPTOR AND DATA REPETITION FACTOR          
+031021  +0         +0  6Code table              ASSOCIATED FIELD SIGNIFICANCE   
+031031  +0         +0  1Numeric                 DATA PRESENT INDICATOR          
+033002  +0         +0  2Code table              QUALITY INFORMATION TABLE       
+033003  +0         +0  3Code table              QUALITY INFORMATION TABLE       
+033007  +0         +0  7%                       % CONFIDENCE                    
+033191  +0         +0  2Code table              ECMWF WAM QC INDICATOR          

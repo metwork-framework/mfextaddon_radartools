@@ -1,0 +1,333 @@
+ 001198   4  0 [C2 ] TYPE DE SPEMET
+          0  1 MMM                                                             
+          1  1 BBB                                                             
+          2  1 EN RESERVE                                                      
+          3  1 VALEUR MANQUANTE                                                
+ 001199  11  0 [C4 ] OBJET PRINCIPAL DU SPEMET
+          0  1 VITESSE MAXIMALE DU VENT                                        
+          1  1 VENT MOYEN                                                      
+          2  1 VISIBILITE                                                      
+          3  1 NON UTILISE                                                     
+          4  1 PRECIPITATIONS                                                  
+          5  1 PRESSION                                                        
+          6  1 ETAT DE LA MER OU DE LA HOULE                                   
+          7  1 TEMPETE DE POUSSIERE OU DE SABLE OU CHASSE NEIGE                
+          8  1 ORAGE AVEC OU SANS PRECIPITATIONS                               
+          9  1 GRAIN OU TROMBE                                                 
+         15  1 VALEUR MANQUANTE                                                
+ 002200   2  0 [C1 ] INDICATEUR DU TYPE D'ANCRE FLOTTANTE
+          0  1 VALEUR UTILISEE POUR L'INSTANT                                  
+          1  1 MASQUE                                                          
+ 002201   6  0 [C4 ] INDICATOR FOR METHOD OF CALCULATION OF SPECTRAL DATA
+          0  1 RESERVED
+          1  1 LONGUET-HIGGINS(1964)
+          2  1 LONGUET-HIGGINS(F3 METHOD)
+          3  1 MAXIMUM LIKELIHOOD METHOD
+          4  1 MAXIMUM ENTROPY METHOD
+         15  1 MISSING
+ 002202   5  0 [C3 ] INDICATOR FOR TYPE OF PLATFORM
+          0  1 SEA STATION
+          1  1 AUTOMATIC DATA BUOY
+          2  1 AIRCRAFT
+          3  1 SATELLITE
+          7  1 MISSING
+ 002203   4  0 [C2 ] WAVE MEASUREMENT INSTRUMENTATION
+          0  1 RESERVED
+          1  1 HEAVE SENSOR
+          2  1 SLOPE SENSOR
+          3  1 MISSING
+ 002204   5  0 [C3 ] INDICATEUR DES UNITES VITESSE VENT ET TYPE D'INSTRUM
+          0  2 METRES PAR SECONDE.STATIONS TERRESTRES ET NAVIRES POURVUS 
+               D'INSTRUMENTS HOMOLOGUES
+          1  2 NOEUDS. STATIONS TERRESTRES ET NAVIRES POURVUS D'INSTRUMENTS
+               HOMOLOGUES
+          2  1 METRES PAR SECONDE. NAVIRES POURVUS D'INSTRUMENTS NON HOMOLOGUES
+          3  1 NOEUDS. NAVIRES POURVUS D'INSTRUMENTS NON HOMOLOGUES
+          7  1 MISSING
+ 020194  10  0 [C4 ] ETAT DE LA NEIGE
+          0  1 NEIGE FRAICHE (OU RECENTE) SECHE                                
+          1  1 NEIGE FRAICHE (OU RECENTE) SECHE AVEC GIVRE DE SURFACE          
+          2  1 NEIGE FRAICHE (OU RECENTE) HUMIDE                               
+          3  1 NEIGE SOUFFLEE NON PORTANTE                                     
+          4  1 NEIGE SOUFFLEE PORTANTE                                         
+          5  1 VIEILLE NEIGE HUMIDE NON PORTANTE (POURRIE)                     
+          6  1 VIEILLE NEIGE HUMIDE PORTANTE (NON CROUTEE)                     
+          7  1 CROUTE DE REGEL NON PORTANTE                                    
+          8  1 CROUTE DE REGEL PORTANTE                                        
+          9  1 SURFACE LISSE ET GLACEE                                         
+ 020196  10  0 [C4 ] NUAGES DANS LA VALLEE
+          0  1 PAS DE NUAGE                                                    
+          1  1 NUAGES ISOLES, ALTITUDE DES SOMMETS < 1000M                     
+          2  1 NUAGES ISOLES, ALTITUDE DES SOMMETS ENTRE 1000M ET 1500M        
+          3  1 NUAGES ISOLES, ALTITUDE DES SOMMETS > 1500M                     
+          4  1 MER DE NUAGES PARTIELLE, ALTITUDE DES SOMMETS < 1000M           
+          5  2 MER DE NUAGES PARTIELLE, ALTITUDE DES SOMMETS ENTRE 1000 ET     
+               1500M                                                           
+          6  1 MER DE NUAGES PARTIELLE, ALTITUDE DES SOMMETS > 1500M           
+          7  1 MER DE NUAGES COMPLETE, ALTITUDE DES SOMMETS < 1000M            
+          8  2 MER DE NUAGES COMPLETE, ALTITUDE DES SOMMETS ENTRE 1000 ET      
+               1500M                                                           
+          9  1 MER DE NUAGES COMPLETE, ALTITUDE DES SOMMETS > 1500M            
+ 020197  10  0 [C4 ] CHASSE-NEIGE EN ALTITUDE
+          0  1 PAS DE CHASSE-NEIGE       
+          1  2 IL Y A EU DE LA CHASSE-NEIGE DEPUIS LA DERNIERE OBSERVATION 
+               ET PAS DE CHASSE-NEIGE EN ALTITUDE AU MOMENT DE L'OBSERVATION
+          2  1 CHASSE-NEIGE MODEREE D'EST    
+          3  1 CHASSE-NEIGE MODEREE DU SUD    
+          4  1 CHASSE-NEIGE MODEREE D'OUEST    
+          5  1 CHASSE-NEIGE MODEREE DE NORD     
+          6  1 CHASSE-NEIGE FORTE D'EST          
+          7  1 CHASSE-NEIGE FORTE DU SUD          
+          8  1 CHASSE-NEIGE FORTE D'OUEST          
+          9  1 CHASSE-NEIGE FORTE DE NORD           
+ 020198  10  0 [C4 ] DESCRIPTION AVALANCHES OBSERVEES
+          0  1 RIEN A SIGNALER 
+          1  1 DECLENCHEMENT ACCIDENTEL.PAS D'AVALANCHES NATURELLES 
+          2  1 DECLENCHEMENT ARTIFICIEL POSITIF.PAS D'AVALANCHES NATURELLES  
+          3  1 FISSURES DANS LE MANTEAU NEIGEUX                 
+          4  1 COULEES SUPERFICIELLES (UNE OU PLUSIEURS)         
+          5  1 UNE SEULE AVALANCHE OBSERVEE. AVALANCHES NATURELLES
+          6  1 DEUX AVALANCHES OBSERVEES. AVALANCHES NATURELLES
+          7  1 TROIS A CINQ AVALANCHES OBSERVEES. AVALANCHES NATURELLES  
+          8  1 CINQ A DIX AVALANCHES OBSERVEES. AVALANCHES NATURELLES
+          9  1 PLUS DE DIX AVALANCHES OBSERVEES.AVALANCHES NATURELLES
+ 020199  10  0 [C4 ] GENRE D'AVALANCHES
+          0  1 RIEN A SIGNALER          
+          1  1 AVALANCHE DE NEIGE RECENTE, SECHE, DEPART PONCTUEL 
+          2  1 AVALANCHE DE NEIGE RECENTE, HUMIDE, DEPART PONCTUEL 
+          3  1 AVALANCHE DE NEIGE RECENTE, DEPART LINEAIRE
+          4  1 AVALANCHE DE PLAQUE DE SURFACE   
+          5  1 AVALANCHE DE PLAQUE A VENT        
+          6  1 AVALANCHE DE PLAQUE DE FOND        
+          7  1 AVALANCHE DE FONTE DE SURFACE       
+          8  1 AVALANCHE DE FONTE DE FOND           
+          9  1 PLUSIEURS AVALANCHES DE TYPE DIFFERENT
+ 020200  10  0 [C4 ] ALTITUDE DEPART DE L'AVALANCHE
+          0  1 RIEN A SIGNALER      
+          1  1 INFERIEURE A 1750 M   
+          2  1 ENTRE 1750 M ET 2000 M 
+          3  1 ENTRE 2000 M ET 2250 M  
+          4  1 ENTRE 2250 M ET 2500 M   
+          5  1 ENTRE 2500 M ET 2750 M    
+          6  1 ENTRE 2750 M ET 3000 M     
+          7  1 ENTRE 3000 M ET 3500 M      
+          8  1 SUPERIEURE A 3500 M          
+          9  1 DEPART A PLUSIEURS ALTITUDES  
+ 020201  10  0 [C4 ] EXPOSITION DE L'AVALANCHE
+          0  1 RIEN A SIGNALER             
+          1  1 NORD-EST                     
+          2  1 EST                           
+          3  1 SUD-EST                        
+          4  1 SUD                             
+          5  1 SUD-OUEST                        
+          6  1 OUEST                             
+          7  1 NORD-OUEST                         
+          8  1 NORD                                
+          9  1 DEPART A PLUSIEURS EXPOSITIONS       
+ 020202   8  0 [C4 ] ESTIMATION DU RISQUE D'AVALANCHE
+          1  1 FAIBLE
+          2  1 LIMITE 
+          3  1 MARQUE  
+          4  1 FORT     
+          5  1 TRES FORT 
+          6  1 NON UTILISE
+          7  1 NON UTILISE 
+          8  1 NON UTILISE
+ 020203   9  0 [C4 ] TYPE DES GRAINS DE SURFACE PREDOMINANT DANS LA COUCHE
+          1  1 NEIGE FRAICHE
+          2  1 PARTICULES RECONNAISSABLES   
+          3  1 GRAINS FINS        
+          4  1 FACES PLANES        
+          5  1 GOBELETS             
+          6  1 GRAINS RONDS          
+          7  1 CROUTES                
+          8  1 GIVRE DE SURFACE        
+          9  1 NEIGE ROULEE             
+ 020204   9  0 [C4 ]TYPE DES GRAINS DE SURFACE LES PLUS NBREUX APRES LES GRAINS PREDOMINANTS
+          1  1 NEIGE FRAICHE             
+          2  1 PARTICULES RECONNAISSABLES 
+          3  1 GRAINS FINS      
+          4  1 FACES PLANES      
+          5  1 GOBELETS           
+          6  1 GRAINS RONDS        
+          7  1 CROUTES              
+          8  1 GIVRE DE SURFACE      
+          9  1 NEIGE ROULEE           
+ 020206   3  0 [C2 ] INDICATEUR D'HOMOGENEITE DE LA COUCHE
+          0  2 IL A NEIGE PLUS DE 5 CM DEPUIS LA  DERNIERE OBSERVATION.
+               CAROTTAGE VERTICAL SUR LA PLANCHE 
+          1  3 IL N'A PAS NEIGE (OU MOINS DE 5 CM) ET LA COUCHE DE 10 CM
+               SOUS LA SURFACE EST HOMOGENE. CAROTTAGE HORIZONTAL ENTRE
+               LA SURFACE DE LA NEIGE ET LE NIVEAU -10 CM             
+          2  4 IL N'A PAS NEIGE (OU MOINS DE 5 CM) ET LA COUCHE DE 10 CM
+               SOUS LA SURFACE EST CONSTITUEE D'UNE OU PLUSIEURS STRATES
+               DE NATURE OU DE DURETE DIFFERENTE. PAS DE MESURE DE MASSE
+               VOLUMIQUE
+ 022067  40  0 [C10] Instrument type for water temperature profile measurement
+          1  1 Sippican T-4            6.472           -2.16
+          2  1 Sippican T-4            6.691           -2.25
+         11  1 Sippican T-5            6.828           -1.82
+         21  1 Sippican  Fast Deep     6.346           -1.82
+         31  1 Sippican T-6            6.472           -2.16
+         32  1 Sippican T-6            6.691           -2.25
+         41  1 Sippican T-7            6.472           -2.16
+         42  1 Sippican T-7            6.691           -2.25
+         51  1 Sippican Deep Blue      6.472           -2.16
+         52  1 Sippican Deep Blue      6.691           -2.25
+         61  1 Sippican T-10           6.301           -2.16
+         71  1 Sippican T-11           1.779           -0.255
+        201  1 TSK T-4                 6.472           -2.16
+        202  1 TSK T-4                 6.691           -2.25
+        211  1 TSK T-6                 6.472           -2.16
+        212  1 TSK T-6                 6.691           -2.25
+        221  1 TSK T-7                 6.472           -2.16
+        222  1 TSK T-7                 6.691           -2.25
+        231  1 TSK T-5                 6.828           -1.82
+        241  1 TSK T-10                6.301           -2.16
+        401  1 Spartan XBT-1           6.301           -2.16
+        411  1 Spartan XBT-3           5.861           -0.0904
+        421  1 Spartan XBT-4           6.472           -2.16
+        431  1 Spartan XBT-5           6.828           -1.82
+        441  1 Spartan XBT-5DB         6.828           -1.8
+        451  1 Spartan XBT-6           6.472           -2.16
+        461  1 Spartan XBT-7           6.472           -2.16
+        471  1 Spartan XBT-7DB         6.472           -2.16
+        481  1 Spartan XBT-10          6.301           -2.16
+        491  1 Spartan XBT-20          6.472           -2.16
+        501  1 Spartan XBT-20DB        6.472           -2.16
+        700  1 Sippican XCTD standard
+        710  1 Sippican XCTD deep
+        720  1 Sippican AXCTD
+        730  1 Sippican SXCTD
+        800  1 BT micanique
+        810  1 Hydrocast
+        820  1 Chaine a thermistance
+        830  1 CTD
+       1023  1 MISSING VALUE
+ 022068  20  0 [C7 ] Water temperature profile measurement recorder types
+          1  1 Enregistreur Sippican a papier deroulant
+          2  1 Sippican MK2A/SSQ-61
+          3  1 Sippican MK9
+          4  1 Sippican AN/BHQ-7/MK8
+          5  1 Sippican MK12
+         10  1 Processeur Spartan SOC BT/SV modhle 100
+         20  1 Argos XBT-ST
+         21  1 CLS-ARGOS/Protecno XBT-ST modhle 1
+         22  1 CLS-ARGOS/Protecno XBT-ST modhle 2
+         30  1 BATHY Systems SA-810
+         31  1 Contrtleur Scripps Metrobyte
+         32  1 Murayama Denki Z-60-16 III
+         33  1 Murayama Denki Z-60-16 II
+         34  1 Protecno ETSM2
+         35  1 Nautilus Marine Service NMS-XBT
+         40  1 TSK MK-2A
+         41  1 TSK MK-2S
+         42  1 TSK MK-30
+         43  1 TSK MK-30N
+        127  1 MISSING VALUE
+ 022228   3  0 [C2 ] INDICATEUR DE FOND
+          0  1 FOND ATTEINT
+          1  1 FOND NON ATTEINT
+          3  1 MISSING
+ 033192   4  0 [C3 ] FLAG DE QUALITE SUR PARAMETRE
+          0  1 QUALITE CORRECTE           
+          1  1 QUALITE DOUTEUSE          
+          2  1 QUALITE MAUVAISE         
+          3  1 NON CONTROLE            
+ 033212   4  0 [C2 ] QUALITE DE LA MESURE DE PRESSION
+          0  1 VALEUR COMPRISE DANS LES LIMITES SPECIFIEES  
+          1  1 VALEUR SORTANT DES LIMITES SPECIFIEES       
+          2  1 NON UTILISE                                
+          3  1 MASQUE              
+ 033213   4  0 [C2 ] QUALITE DU PARAMETRE TECHNOLOGIQUE(DEUXIEME VARIABLE DU PREMIERBLOC DE DONNEES CAPTEURS DES PLATES-FORMES ARGOS)
+          0  1 VALEUR COMPRISE DANS LES LIMITES 
+          1  1 VALEUR SORTANT DES LIMITES      
+          2  1 NON UTILISE                    
+          3  1 MASQUE                        
+ 033214   4  0 [C2 ] QUALITE DE LA MESURE DE LA TEMPERATURE DE L'EAU EN SURFACE
+          0  1 VALEUR COMPRISE DANS LES LIMITES      
+          1  1 VALEUR SORTANT DES LIMITES           
+          2  1 NON UTILISE                         
+          3  1 MASQUE                             
+ 033215   4  0 [C2 ] VALEUR DE LA MESURE DE LA TEMPERATURE DE L'AIR
+          0  1 VALEUR COMPRISE DANS LES LIMITES  
+          1  1 VALEUR SORTANT DES LIMITES       
+          2  1 NON UTILISE                     
+          3  1 MASQUE                         
+ 033216   4  0 [C2 ] QUALITE DES TRANSMISSIONS ENTRE LA BOUEE ET LE SATELLITE
+          0  1 BONNE QUALITE(PLUSIEURS MESSAGES IDENTIQUES ONT ETE RECUS)
+          1  1 QUALITE DOUTEUSE(PAS DE MESSAGES IDENTIQUES)             
+          2  1 NON UTILISE                                             
+          3  1 MASQUE                                                 
+ 033217   4  0 [C2 ] QUALITE DE LA POSITION
+          0  2 LA VALEUR TRANSMISE AU DEBUT DU MESSAGE EST FIABLE (POSITION
+               DETERMINEE SUR LA BASE DE 2 PASSAGES DU SATELLITE)
+          1  3 LES VALEURS DU DEBUT DU MESSAGE SONT LES DERNIERES VALEURS
+               CONNUES (PAS DE DONNEES DE POSITION A L'OCCASION DU PASSAGE
+               CORRESPONDANT)                                   
+          2  3 QUALITE DOUTEUSE. LA POSITION A ETE DETERMINEE SUR LA BASE
+               D'UN SEUL PASSAGE. UNE SECONDE SOLUTION EST POSSIBLE DANS
+               5% DES CAS            
+          3  1 MASQUE               
+ 033218   7  0 [C3 ] INDICATEUR CONTROLE DE QUAL DES DONNEES RELATIVES A LA POSITION
+          0  1 DONNEES NON VERIFIEES            
+          1  1 DONNEES BONNES                  
+          2  1 MANQUE DE CONCORDANCE          
+          3  1 DONNEES DOUTEUSES             
+          4  1 DONNEES ERRONEES             
+          5  1 LA VALEUR DES DONNEES A ETE MODIFIEE   
+          7  1 VALEUR MANQUANTE                      
+ 033219   7  0 [C3 ] INDICATEUR CONTROLE DE QUAL DES DONNEES RELATIVES A L'HEURE
+          0  1 DONNEES NON VERIFIEES         
+          1  1 DONNEES BONNES               
+          2  1 MANQUE DE CONCORDANCE       
+          3  1 DONNEES DOUTEUSES          
+          4  1 DONNEES ERRONEES          
+          5  1 LA VALEUR DES DONNEES A ETE MODIFIEE
+          7  1 VALEUR MANQUANTE                   
+ 033220   7  0 [C3 ] INDICATEUR CONTROLE DE QUAL DES DONNEES METEOROLOGIQUES
+          0  1 DONNEES NON VERIFIEES            
+          1  1 DONNEES BONNES                  
+          2  1 MANQUE DE CONCORDANCE          
+          3  1 DONNEES DOUTEUSES             
+          4  1 DONNEES ERRONEES             
+          5  1 LA VALEUR DES DONNEES A ETE MODIFIEE   
+          7  1 VALEUR MANQUANTE                      
+ 033221  13  0 [C4 ] INDICATEUR DE POSITION DU GROUPE
+          0  1 VENT   
+          1  1 TEMPERATURE DE L'AIR   
+          2  1 TEMPERATURE DU POINT DE ROSEE OU HUMIDITE   
+          3  1 PRESSION STATION                           
+          4  1 PRESSION MER                              
+          5  1 TENDANCE BAROMETRIQUE                    
+          6  1 PARAMETRE INDETERMINE DONNEES METEO     
+          7  1 TEMPERATURE MER                        
+          8  1 PERIODE ET HAUTEUR DES VAGUES         
+          9  1 PERIODE DES VAGUES                   
+         10  1 HAUTEUR DES VAGUES                  
+         11  1 PARAMETRE INDETERMINE DONNEES MARINES
+         15  1 VALEUR MANQUANTE                    
+ 033222   7  0 [C3 ] INDICATEUR CONTROLE DE QUAL DES DONNEES MARINES
+          0  1 DONNEES NON VERIFIEES            
+          1  1 DONNEES BONNES                  
+          2  1 MANQUE DE CONCORDANCE          
+          3  1 DONNEES DOUTEUSES             
+          4  1 DONNEES ERRONEES             
+          5  1 LA VALEUR DES DONNEES A ETE MODIFIEE   
+          7  1 VALEUR MANQUANTE                      
+ 033223   7  0 [C3 ] INDICATEUR DE CONTROLE DE QUAL DES DONNEES RELATIVES AUX PROFILS DE TEMPERATURE ET DE SALINITE
+          0  1 DONNEES NON VERIFIEES               
+          1  1 DONNEES BONNES                     
+          2  1 MANQUE DE CONCORDANCE             
+          3  1 DONNEES DOUTEUSES                
+          4  1 DONNEES ERRONEES                
+          5  1 LA VALEUR DES DONNEES A ETE MODIFIEE
+          7  1 VALEUR MANQUANTE                   
+ 033224   7  0 [C3 ] INDICATEUR CONTROLE DE QUAL DES DONNEES RELATIVES AUX PROFILS DES COURANTS
+          0  1 DONNEES NON VERIFIEES   
+          1  1 DONNEES BONNES         
+          2  1 MANQUE DE CONCORDANCE 
+          3  1 DONNEES DOUTEUSES    
+          4  1 DONNEES ERRONEES    
+          5  1 LA VALEUR DES DONNEES A ETE MODIFIEE
+          7  1 VALEUR MANQUANTE                   
