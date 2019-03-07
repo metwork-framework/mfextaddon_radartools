@@ -125,8 +125,8 @@ class BufrRadarCoDec(RadarCoDec):
         else:
             print("Empreinte inconnu : %s\n" % str(footprint_file))
             return
-        os.environ['NEPDescPixConf'] = os.environ['DEMETER_IMAGE'] +\
-            descripteurs_pixmap
+        os.environ['NEPDescPixConf'] = os.path.join(os.environ['DEMETER_IMAGE'],
+                                                    descripteurs_pixmap)
         return (footprint_file, descripteur_pixmap)
 
     def decoding(self, path_file):
