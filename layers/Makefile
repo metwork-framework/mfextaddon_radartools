@@ -5,11 +5,10 @@ include $(MFEXT_HOME)/share/subdir_root.mk
 
 SUBDIRS=$(shell ls -d layer* |grep -v "\.mk")
 
-all:: layerdir 
+all:: layerdir
 	@for SUBDIR in $(SUBDIRS); do OLDPWD=`pwd`; cd $$SUBDIR || exit 1; $(MAKE) all || exit 1; cd $${OLDPWD}; done
-	chmod -R u+w $(MFEXT_HOME)/opt
 
-clean:: 
+clean::
 	@for SUBDIR in $(SUBDIRS); do OLDPWD=`pwd`; cd $$SUBDIR || exit 1; $(MAKE) clean || exit 1; cd $${OLDPWD}; done
 
 doc:
