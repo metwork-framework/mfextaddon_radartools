@@ -12,6 +12,8 @@ WEBSITE=http://www.meteo.fr
 LICENSE=meteo france
 SHORT_VERSION=1.0.0
 
+export WGETRC=$(shell pwd)/wgetrc
+
 
 all:: $(PREFIX)/lib/libcodes.so $(PREFIX)/share/tables $(PREFIX)/share/templates_pixmap
 $(PREFIX)/lib/libcodes.so:
