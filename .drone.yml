@@ -47,7 +47,6 @@ publish_ci_common: &publish_ci_common
     - mkdir -p /private/metwork_addons/continuous_integration/rpms/${DRONE_BRANCH}/${OS_VERSION}/
     - cp *.rpm /private/metwork_addons/continuous_integration/rpms/${DRONE_BRANCH}/${OS_VERSION}/
     - createrepo --update /private/metwork_addons/continuous_integration/rpms/${DRONE_BRANCH}/${OS_VERSION}
-    - if test "${OS_VERSION}" = "centos6"; then rm -Rf /private/metwork_addons/continuous_integration/docs/${DRONE_BRANCH}/mfextaddon_radartools; mkdir -p /private/metwork_addons/continuous_integration/docs/${DRONE_BRANCH}/mfextaddon_radartools ; cp -Rf html_doc/* /private/metwork_addons/continuous_integration/docs/${DRONE_BRANCH}/mfextaddon_radartools/ ; fi
     - touch /buildcache/build_mfextaddon_radartools_${DRONE_BRANCH}_`cat .drone_cache`
   volumes:
     - /pub:/pub
@@ -153,7 +152,6 @@ pipeline:
       - mkdir -p /private/metwork_addons/releases/rpms/${DRONE_BRANCH}/${OS_VERSION}/
       - cp *.rpm /private/metwork_addons/releases/rpms/${DRONE_BRANCH}/${OS_VERSION}/
       - createrepo --update /private/metwork_addons/releases/rpms/${DRONE_BRANCH}/${OS_VERSION}
-      - if test "${OS_VERSION}" = "centos6"; then rm -Rf /private/metwork_addons/releases/docs/${DRONE_BRANCH}/mfextaddon_radartools; mkdir -p /private/metwork_addons/releases/docs/${DRONE_BRANCH}/mfextaddon_radartools ; cp -Rf html_doc/* /private/metwork_addons/releases/docs/${DRONE_BRANCH}/mfextaddon_radartools/ ; fi
     when:
       event: tag
       ref: refs/tags/v*
