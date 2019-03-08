@@ -28,9 +28,10 @@ fi
 
 MFEXT_HOME=$(get_abs_filename "$1")
 export MFEXT_HOME
-MFEXT_VERSION=$(cat ${MFEXT_HOME}/config/version)
+MFEXT_VERSION=$(cat "${MFEXT_HOME}/config/version")
 export MFEXT_VERSION
-export MODULE_VERSION=$(${MFEXT_HOME}/bin/guess_version.sh)
+MODULE_VERSION=$("${MFEXT_HOME}/bin/guess_version.sh")
+export MODULE_VERSION
 export MODULE_HOME=${MFEXT_HOME}
 
 export MODULE=MFEXT
@@ -48,7 +49,7 @@ ROOT_PATH=${MFEXT_HOME}/bin:${PATH:-}
 echo "Making adm/root.mk..."
 rm -f adm/root.mk adm/envtpl
 touch adm/root.mk
-ln -s ${MFEXT_HOME}/bin/envtpl adm/envtpl
+ln -s "${MFEXT_HOME}/bin/envtpl" adm/envtpl
 
 echo "export MODULE := ${MODULE}" >>adm/root.mk
 echo "export MODULE_LOWERCASE := $(echo ${MODULE} | tr '[:upper:]' '[:lower:]')" >>adm/root.mk
