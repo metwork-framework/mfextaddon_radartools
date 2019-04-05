@@ -1,16 +1,16 @@
 # automatically generated from https://github.com/metwork-framework/resources/blob/master/cookiecutter/_%7B%7Bcookiecutter.repo%7D%7D/mfxxx_drone.yml template
 
 
-    
-    
-    
 
 
 
-    
-        
-        
-    
+
+
+
+
+
+
+
 
 
 bootstrap_common: &bootstrap_common
@@ -33,6 +33,7 @@ build_common: &build_common
     - export METWORK_BUILD_OS=${OS_VERSION}
 
     - mkdir -p /opt/metwork-mfext-$${TARGET_DIR}
+    - yum -y install metwork-mfext-layer-python3_scientific-$${DEP_BRANCH} metwork-mfext-layer-python2_scientific-$${DEP_BRANCH}
     - make
 
     - make test
@@ -106,6 +107,7 @@ pipeline:
     image: metwork/mfcom-${OS_VERSION}-buildimage:integration
     environment:
       - TARGET_DIR=master
+      - DEP_BRANCH=integration
     when:
 
       event: [push, pull_request]
@@ -116,6 +118,7 @@ pipeline:
     image: metwork/mfcom-${OS_VERSION}-buildimage:${DRONE_BRANCH}
     environment:
       - TARGET_DIR=${DRONE_BRANCH##release_}
+      - DEP_BRANCH=${DRONE_BRANCH}
     when:
       event: push
       branch: [ master, experimental*, release_* ]
@@ -124,6 +127,7 @@ pipeline:
     image: metwork/mfcom-${OS_VERSION}-buildimage:${DRONE_BRANCH}
     environment:
       - TARGET_DIR=${DRONE_BRANCH##release_}
+      - DEP_BRANCH=${DRONE_BRANCH}
     when:
       event: tag
       ref: refs/tags/v*
