@@ -1,0 +1,50 @@
+diff -up demeter-python-1.0.0/configure.orig demeter-python-1.0.0/configure
+--- demeter-python-1.0.0/configure.orig	2019-07-18 10:59:57.780140799 +0200
++++ demeter-python-1.0.0/configure	2019-07-18 11:00:40.591140728 +0200
+@@ -6079,9 +6079,9 @@ $as_echo "yes" >&6; }
+ fi
+ 
+ 
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if Python <= '3.6.99'" >&5
+-$as_echo_n "checking if Python <= '3.6.99'... " >&6; }
+-if ${pc_cv_python_min_version_3_6_99+:} false; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: checking if Python <= '3.8.99'" >&5
++$as_echo_n "checking if Python <= '3.8.99'... " >&6; }
++if ${pc_cv_python_min_version_3_8_99+:} false; then :
+   $as_echo_n "(cached) " >&6
+ else
+   ac_ext=py
+@@ -6101,7 +6101,7 @@ if __name__ == '__main__':
+     # split strings by '.' and convert to numeric.  Append some zeros
+     # because we need at least 4 digits for the hex conversion.
+     # map returns an iterator in Python 3.0 and a list in 2.x
+-    reqver = list(map(int, '3.6.99'.split('.'))) + [0, 0, 0]
++    reqver = list(map(int, '3.8.99'.split('.'))) + [0, 0, 0]
+     reqverhex = 0
+     # xrange is not present in Python 3.0 and range returns an iterator
+     for i in list(range(4)):
+@@ -6113,9 +6113,9 @@ if __name__ == '__main__':
+ 
+ _ACEOF
+ if ac_fn_py_try_run "$LINENO"; then :
+-  pc_cv_python_req_version_3_6_99="yes"
++  pc_cv_python_req_version_3_8_99="yes"
+ else
+-  pc_cv_python_req_version_3_6_99="no"
++  pc_cv_python_req_version_3_8_99="no"
+ fi
+ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+   conftest.$ac_objext conftest.beam conftest.$ac_ext
+@@ -6128,9 +6128,9 @@ ac_link='$CC -o conftest$ac_exeext $CFLA
+ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+ 
+ fi
+-{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $pc_cv_python_min_version_3_6_99" >&5
+-$as_echo "$pc_cv_python_min_version_3_6_99" >&6; }
+-if test "$pc_cv_python_req_version_3_6_99" = "no"; then :
++{ $as_echo "$as_me:${as_lineno-$LINENO}: result: $pc_cv_python_min_version_3_8_99" >&5
++$as_echo "$pc_cv_python_min_version_3_8_99" >&6; }
++if test "$pc_cv_python_req_version_3_8_99" = "no"; then :
+   { { $as_echo "$as_me:${as_lineno-$LINENO}: error: in \`$ac_pwd':" >&5
+ $as_echo "$as_me: error: in \`$ac_pwd':" >&2;}
+ as_fn_error $? "No compatible Python interpreter found. If you're sure that you have one, try setting the PYTHON environment variable to the location of the interpreter.
