@@ -1,8 +1,6 @@
 #!/bin/bash
 # automatically generated from https://github.com/metwork-framework/resources/blob/master/cookiecutter/_%7B%7Bcookiecutter.repo%7D%7D/mfxxx_run_integration_tests.sh template
 
-cd integration_tests 2>/dev/null
-
 if test $? != 0; then
     echo "Directory integration_tests is missing"
     exit 0
@@ -26,20 +24,29 @@ for rep in $list_rep; do
         fi
         for test in test*; do
             echo "Test" $test "in" $rep
+            for F in $(ls ${MODULE_RUNTIME_HOME}/log/*.log ${MODULE_RUNTIME_HOME}/log/*.stdout ${MODULE_RUNTIME_HOME}/log/*.stderr 2>/dev/null); do
+                truncate -s 0 "${F}"
+            done
             if test $WRAPPER -eq 0; then
                 layer_wrapper --layers=$LAYERS_TO_LOAD -- ./$test
             else
                 ./$test
             fi
             if test $? == 0; then
-                echo "Test $test OK"
+                echo "Test $test ($rep) OK"
             else
-                echo "Test $test KO"
-                ret=1
+                for F in $(ls ${MODULE_RUNTIME_HOME}/log/*.log ${MODULE_RUNTIME_HOME}/log/*.stdout ${MODULE_RUNTIME_HOME}/log/*.stderr 2>/dev/null); do
+                    if test -s "${F}"; then
+                        echo "===== 40 last lines of ${F} to debug ====="
+                        tail -40 "${F}"
+                        echo ""
+                        echo ""
+                    fi
+                done
+                echo "Test $test ($rep) KO"
+                exit 1
             fi
         done
         cd ..
     fi
 done
-
-exit $ret
