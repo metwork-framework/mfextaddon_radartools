@@ -21,29 +21,45 @@ bootstrap_common: &bootstrap_common
     - ./bootstrap.sh /opt/metwork-mfext-$${TARGET_DIR}
 
     - cat adm/root.mk
+    - env |sort
 
 
 build_common: &build_common
   commands:
     - if test "$${FORCED_OS_VERSION}" != ""; then if test "$${FORCED_OS_VERSION}" != "${OS_VERSION}"; then echo "step bypass"; exit 0; fi; fi
-    - export METWORK_BUILD_OS=${OS_VERSION}
+    - if test "${OS_VERSION}" = "centos6"; then export METWORK_BUILD_OS=generic; else export METWORK_BUILD_OS=${OS_VERSION}; fi
 
+    - if test -d /buildcache; then export BUILDCACHE=/buildcache; fi
     - mkdir -p /opt/metwork-mfext-$${TARGET_DIR}
     - yum -y install metwork-mfext-layer-python3_scientific metwork-mfext-layer-python2_scientific
     - make
-
+    - OUTPUT=`git status --short`
+    - if test "$${OUTPUT}" != ""; then echo "ERROR non empty git status output $${OUTPUT}"; echo "git diff output"; git diff; exit 1; fi
+    - MODULEHASH=`/opt/metwork-mfext-$${TARGET_DIR}/bin/mfext_wrapper module_hash 2>module_hash.debug` # FIXME: module_hash for addons ?
+    - if test -f /opt/metwork-mfext-$${TARGET_DIR}/.dhash; then cat /opt/metwork-mfext-$${TARGET_DIR}/.dhash; fi
+    - cat module_hash.debug |sort |uniq ; rm -f module_hash.debug
+    - echo "$${MODULEHASH}${DRONE_TAG}${DRONE_BRANCH}" |md5sum |cut -d ' ' -f1 >.build_hash
+    - if test -f "$${BUILDCACHE}/build_hash_`cat .build_hash`"; then echo "next bypass"; touch .drone_downstream_bypass; exit 0; fi
     - make test
     - make RELEASE_BUILD=${DRONE_BUILD_NUMBER} rpm
     - mv /opt/metwork-mfext-$${TARGET_DIR}/*.rpm .
-
+  volumes:
+    - /pub:/pub
+    - /private:/private
+    - /buildcache:/buildcache
 
 publish_ci_common: &publish_ci_common
   commands:
     - if test "$${FORCED_OS_VERSION}" != ""; then if test "$${FORCED_OS_VERSION}" != "${OS_VERSION}"; then echo "step bypass"; exit 0; fi; fi
+    - if test -d /buildcache; then export BUILDCACHE=/buildcache; fi
+    - if test -f .drone_downstream_bypass; then echo "step bypass"; exit 0; fi
     - mkdir -p /private/metwork_addons/continuous_integration/rpms/${DRONE_BRANCH}/${OS_VERSION}/
+    - if ! test -L /private/metwork_addons/continuous_integration/rpms/${DRONE_BRANCH}/portable; then ln -s centos6 /private/metwork_addons/continuous_integration/rpms/${DRONE_BRANCH}/portable; fi
     - cp *.rpm /private/metwork_addons/continuous_integration/rpms/${DRONE_BRANCH}/${OS_VERSION}/
     - createrepo --update /private/metwork_addons/continuous_integration/rpms/${DRONE_BRANCH}/${OS_VERSION}
+    - touch "$${BUILDCACHE}/build_hash_`cat .build_hash`"
   volumes:
+    - /buildcache:/buildcache
     - /pub:/pub
     - /private:/private
 
@@ -51,6 +67,7 @@ publish_ci_common: &publish_ci_common
 integration_tests_common: &integration_tests_common
   commands:
     - if test "$${FORCED_OS_VERSION}" != ""; then if test "$${FORCED_OS_VERSION}" != "${OS_VERSION}"; then echo "step bypass"; exit 0; fi; fi
+    - if test -f .drone_downstream_bypass; then echo "step bypass"; exit 0; fi
 
     - echo -e "[metwork_$${DEP_BRANCH}]" >/etc/yum.repos.d/metwork.repo
     - echo -e "name=Metwork Continuous Integration Branch $${DEP_BRANCH}" >> /etc/yum.repos.d/metwork.repo
@@ -107,6 +124,10 @@ pipeline:
     environment:
       - TARGET_DIR=master
       - DEP_BRANCH=integration
+    volumes:
+      - /pub:/pub
+      - /private:/private
+      - /buildcache:/buildcache
     when:
 
       event: [push, pull_request]
@@ -118,6 +139,10 @@ pipeline:
     environment:
       - TARGET_DIR=${DRONE_BRANCH##release_}
       - DEP_BRANCH=${DRONE_BRANCH}
+    volumes:
+      - /pub:/pub
+      - /private:/private
+      - /buildcache:/buildcache
     when:
       event: push
       branch: [ master, experimental*, release_* ]
@@ -127,13 +152,17 @@ pipeline:
     environment:
       - TARGET_DIR=${DRONE_BRANCH##release_}
       - DEP_BRANCH=${DRONE_BRANCH}
+    volumes:
+      - /pub:/pub
+      - /private:/private
+      - /buildcache:/buildcache
     when:
       event: tag
       ref: refs/tags/v*
 
   integration_tests_integration:
     <<: *integration_tests_common
-    image: centos:${OS_VERSION}
+    image: metwork/mfxxx-${OS_VERSION}-testimage:integration
     environment:
       - DEP_BRANCH=integration
     when:
@@ -141,7 +170,7 @@ pipeline:
       branch: [ integration, ci_*, pci_* ]
   integration_tests:
     <<: *integration_tests_common
-    image: centos:${OS_VERSION}
+    image: metwork/mfxxx-${OS_VERSION}-testimage:integration
     environment:
       - DEP_BRANCH=${DRONE_BRANCH}
     when:
@@ -169,6 +198,7 @@ pipeline:
     commands:
       - if test "$${FORCED_OS_VERSION}" != ""; then if test "$${FORCED_OS_VERSION}" != "${OS_VERSION}"; then echo "step bypass"; exit 0; fi; fi
       - mkdir -p /private/metwork_addons/releases/rpms/${DRONE_BRANCH}/${OS_VERSION}/
+      - if ! test -L /private/metwork_addons/releases/rpms/${DRONE_BRANCH}/portable; then ln -s centos6 /private/metwork_addons/releases/rpms/${DRONE_BRANCH}/portable; fi
       - cp *.rpm /private/metwork_addons/releases/rpms/${DRONE_BRANCH}/${OS_VERSION}/
       - createrepo --update /private/metwork_addons/releases/rpms/${DRONE_BRANCH}/${OS_VERSION}
     when:
@@ -182,6 +212,5 @@ pipeline:
 matrix:
   OS_VERSION:
     - centos6
-    - centos7
 
 branches: [ master, integration, experimental*, ci_*, pci_*, release_* ]
