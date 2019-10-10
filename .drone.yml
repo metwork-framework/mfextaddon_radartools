@@ -1,34 +1,15 @@
-# automatically generated from https://github.com/metwork-framework/resources/blob/master/cookiecutter/_%7B%7Bcookiecutter.repo%7D%7D/mfxxx_drone.yml template
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 bootstrap_common: &bootstrap_common
   commands:
     - if test "$${FORCED_OS_VERSION}" != ""; then if test "$${FORCED_OS_VERSION}" != "${OS_VERSION}"; then echo "step bypass"; exit 0; fi; fi
     - mkdir -p /opt/metwork-mfext-$${TARGET_DIR}
-
     - ./bootstrap.sh /opt/metwork-mfext-$${TARGET_DIR}
-
     - cat adm/root.mk
     - env |sort
-
 
 build_common: &build_common
   commands:
     - if test "$${FORCED_OS_VERSION}" != ""; then if test "$${FORCED_OS_VERSION}" != "${OS_VERSION}"; then echo "step bypass"; exit 0; fi; fi
     - if test "${OS_VERSION}" = "centos6"; then export METWORK_BUILD_OS=generic; else export METWORK_BUILD_OS=${OS_VERSION}; fi
-
     - if test -d /buildcache; then export BUILDCACHE=/buildcache; fi
     - mkdir -p /opt/metwork-mfext-$${TARGET_DIR}
     - yum -y install metwork-mfext-layer-python3_scientific metwork-mfext-layer-python2_scientific
@@ -170,7 +151,7 @@ pipeline:
       branch: [ integration, ci_*, pci_* ]
   integration_tests:
     <<: *integration_tests_common
-    image: metwork/mfxxx-${OS_VERSION}-testimage:integration
+    image: metwork/mfxxx-${OS_VERSION}-testimage:${DRONE_BRANCH}
     environment:
       - DEP_BRANCH=${DRONE_BRANCH}
     when:
