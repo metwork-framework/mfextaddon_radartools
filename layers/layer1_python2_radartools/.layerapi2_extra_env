@@ -1,2 +1,3 @@
 DEMETER_TABLE={MFEXT_HOME}/opt/python2_radartools/share/tables
 DEMETER_IMAGE={MFEXT_HOME}/opt/python2_radartools/share/templates_pixmap
+PROJ_LIB={MFEXT_HOME}/opt/scientific_core/share/proj

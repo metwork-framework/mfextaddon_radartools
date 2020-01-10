@@ -22,6 +22,16 @@ class TestBufrtogeotiff(TestCase):
     """Classe de test du module bufrtogeotiff."""
 
     def transcodage(self, name):
+        mfext_home = os.environ['MFEXT_HOME']
+        python_mode = os.environ['METWORK_PYTHON_MODE']
+        os.environ['DEMETER_TABLE'] = \
+            "%s/opt/python%s_radartools/share/tables" % (mfext_home,
+                                                         python_mode)
+        os.environ['DEMETER_IMAGE'] = \
+            "%s/opt/python%s_radartools/share/templates_pixmap" % (mfext_home,
+                                                                   python_mode)
+        os.environ['PROJ_LIB'] = "%s/opt/scientific_core/share/proj" \
+                                 % mfext_home
         fileorg = "%s/%s.bufr" % (get_data_folder(), name)
         filedest = "%s/%s.geotiff" % (get_tmp_folder(), name)
         filetarget = "%s/%s.geotiff" % (get_data_folder(), name)

@@ -6,3 +6,6 @@ all::
 
 clean::
 	cd layers && $(MAKE) clean
+
+test::
+	cd layers && $(MAKE) test

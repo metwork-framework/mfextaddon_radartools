@@ -19,3 +19,9 @@ all:: $(PREFIX)/lib/python$(PYTHON2_SHORT_VERSION)/site-packages/radar_tools-0.0
 $(PREFIX)/lib/python$(PYTHON2_SHORT_VERSION)/site-packages/radar_tools-0.0.1-py$(PYTHON2_SHORT_VERSION).egg:
 	$(MAKE) clean
 	layer_wrapper --layers=$(LAYER_NAME)@mfext -- python setup.py install --prefix=$(PREFIX)
+
+test:
+	@echo "***** PYTHON TESTS *****"
+	#flake8.sh --exclude=build .
+	#find . -name "*.py" ! -path './build/*' -print0 |xargs -0 pylint.sh --errors-only
+	cd tests && nosetests.sh .

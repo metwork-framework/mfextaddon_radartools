@@ -16,7 +16,7 @@ class GeotiffRadarCoDec(RadarCoDec):
         if band_num is None:
             count_band = len(data_radar.pixmaps)
         elif int(band_num) <= len(data_radar.pixmaps):
-                count_band = 1
+            count_band = 1
         else:
             return False
 

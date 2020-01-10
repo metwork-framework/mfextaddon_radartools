@@ -372,11 +372,11 @@ class Vue:
         xNO = pointNO.GetX()
         yNO = pointNO.GetY()
         log.debug("xNO : %s" % xNO)
-        xSE = xNO + (self.__domaine.getNumberPixelX() *
-                     self.__domaine.getPixelSizeX())
+        xSE = xNO + (self.__domaine.getNumberPixelX()
+                     * self.__domaine.getPixelSizeX())  # noqa: W503
         log.debug("xSE : %s" % xSE)
-        ySE = yNO - (self.__domaine.getNumberPixelY() *
-                     self.__domaine.getPixelSizeY())
+        ySE = yNO - (self.__domaine.getNumberPixelY()
+                     * self.__domaine.getPixelSizeY())  # noqa: W503
         log.debug("ySE : %s" % ySE)
         pointSE = ogr.Geometry(ogr.wkbPoint)
         pointSE.AddPoint(xSE, ySE)

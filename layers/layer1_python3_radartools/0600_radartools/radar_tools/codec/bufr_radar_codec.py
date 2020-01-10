@@ -34,12 +34,12 @@ class BufrRadarCoDec(RadarCoDec):
                 print('NEPpGbTables : %s\n' % os.environ['NEPpGbTables'])
             else:
                 print('NEPpGbTables : ABSENT\n')
-            cr &= False
+            cr = False
         if env_demeter_image is None and 'DEMETER_IMAGE'in os.environ:
             env_demeter_image = os.environ['DEMETER_IMAGE']
         if os.path.exists(env_demeter_image):
             os.environ['DEMETER_IMAGE'] = env_demeter_image
-            cr &= True
+            cr = True
         else:
             print('ERREUR : Les données associées à DEMETER ne sont pas'
                   ' correctement installées\n')
@@ -51,7 +51,7 @@ class BufrRadarCoDec(RadarCoDec):
                 print('NEPDescPixConf : %s\n' % os.environ['NEPDescPixConf'])
             else:
                 print('NEPDescPixConf : ABSENT\n')
-            cr &= False
+            cr = False
         return cr
 
     def to_dict_str(self, dico):
@@ -125,8 +125,8 @@ class BufrRadarCoDec(RadarCoDec):
         else:
             print("Empreinte inconnu : %s\n" % str(footprint_file))
             return
-        os.environ['NEPDescPixConf'] = os.path.join(os.environ['DEMETER_IMAGE'],
-                                                    descripteurs_pixmap)
+        os.environ['NEPDescPixConf'] = os.path.join(
+            os.environ['DEMETER_IMAGE'], descripteurs_pixmap)
         return (footprint_file, descripteur_pixmap)
 
     def decoding(self, path_file):

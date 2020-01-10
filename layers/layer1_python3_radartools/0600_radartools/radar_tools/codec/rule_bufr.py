@@ -318,12 +318,12 @@ def getVue(data_bufr, meta_definition_projection=None):
 
         four_corners = getFourCorners(data_bufr)
         if four_corners is None:
-                (latNO, lonNO) = data_bufr.getValueByGroupDescr(
+            (latNO, lonNO) = data_bufr.getValueByGroupDescr(
+                POINT_LAT_LON_1_DESCRIPTORS) \
+                if data_bufr.getValueByGroupDescr(
                     POINT_LAT_LON_1_DESCRIPTORS) \
-                    if data_bufr.getValueByGroupDescr(
-                        POINT_LAT_LON_1_DESCRIPTORS) \
-                    else data_bufr.getValueByGroupDescr(
-                        POINT_LAT_LON_2_DESCRIPTORS)
+                else data_bufr.getValueByGroupDescr(
+                    POINT_LAT_LON_2_DESCRIPTORS)
         else:
             latNO, lonNO, latNE, lonNE, latSE, lonSE, latSO, lonSO =\
                 four_corners
@@ -1051,8 +1051,8 @@ def getConversionTable(data_bufr):
             if descrs[i:i + len(group)] == group:
                 min = data_bufr.data[i + 1]['value']
                 max = data_bufr.data[i + 2]['value']
-                moy = int(mtomath.RtoZ((mtomath.ZtoR(min) +
-                                        mtomath.ZtoR(max)) / 2))
+                moy = int(mtomath.RtoZ((mtomath.ZtoR(min)
+                          + mtomath.ZtoR(max)) / 2))  # noqa: W503
 
                 datas.append({'id_level': int(data_bufr.data[i]['value']),
                               'min': min,
