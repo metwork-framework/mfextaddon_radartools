@@ -2,8 +2,8 @@
 # -*- coding: utf-8 -*-
 from unittest import TestCase
 import os
-import mmap
 import radar_tools.scripts.bufrtogeotiff as bufrtogeotiff
+import gdal
 
 
 def get_data_folder():
@@ -32,16 +32,20 @@ class TestBufrtogeotiff(TestCase):
                                                                    python_mode)
         os.environ['PROJ_LIB'] = "%s/opt/scientific_core/share/proj" \
                                  % mfext_home
-        fileorg = "%s/%s.bufr" % (get_data_folder(), name)
-        filedest = "%s/%s.geotiff" % (get_tmp_folder(), name)
-        filetarget = "%s/%s.geotiff" % (get_data_folder(), name)
-        cr = bufrtogeotiff.bufrtogeotiff(fileorg, filedest)
+        location_org = "%s/%s.bufr" % (get_data_folder(), name)
+        location_dest = "%s/%s.geotiff" % (get_tmp_folder(), name)
+        location_target = "%s/%s.geotiff" % (get_data_folder(), name)
+        cr = bufrtogeotiff.bufrtogeotiff(location_org, location_dest)
         self.assertTrue(cr)
-        ftarget = open(filetarget, "r+b")
-        fdest = open(filedest, "r+b")
-        mmap_target = mmap.mmap(ftarget.fileno(), 0)
-        mmap_dest = mmap.mmap(fdest.fileno(), 0)
-        self.assertEqual(mmap_target.size(), mmap_dest.size())
+        dataset_target = gdal.Open(location_target)
+        dataset_dest = gdal.Open(location_dest)
+        self.assertEqual(
+            [round(a, 4) for a in dataset_target.GetGeoTransform()],
+            [round(a, 4) for a in dataset_dest.GetGeoTransform()])
+        self.assertEqual(dataset_target.RasterXSize,
+                         dataset_dest.RasterXSize)
+        self.assertEqual(dataset_target.RasterYSize,
+                         dataset_dest.RasterYSize)
 
     def test01_script(self):
         u"""Teste bufrtogeotiff."""
