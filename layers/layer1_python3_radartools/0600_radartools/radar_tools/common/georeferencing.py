@@ -25,6 +25,10 @@ class Projection:
         @return coordonnée du point dans le plan de projection
         """
         sourceProjection = osr.SpatialReference()
+        # Pour assurer compatibilité GDAL 2 <-> GDAL 3
+        if 'SetAxisMappingStrategy' in dir(sourceProjection):
+            sourceProjection.SetAxisMappingStrategy(
+                osr.OAMS_TRADITIONAL_GIS_ORDER)  # pylint: disable=E1101
         sourceProjection.ImportFromEPSG(4326)
         if self.__spatialReference is None:
             log.debug("pas de spatial")
@@ -42,6 +46,10 @@ class Projection:
         @return coordonnée du point en lat lon
         """
         targetProjection = osr.SpatialReference()
+        # Pour assurer compatibilité GDAL 2 <-> GDAL 3
+        if 'SetAxisMappingStrategy' in dir(targetProjection):
+            targetProjection.SetAxisMappingStrategy(
+                osr.OAMS_TRADITIONAL_GIS_ORDER)  # pylint: disable=E1101
         targetProjection.ImportFromEPSG(4326)
         coordTrans = osr.CoordinateTransformation(
             self.__spatialReference, targetProjection)
