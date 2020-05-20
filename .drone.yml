@@ -12,7 +12,7 @@ build_common: &build_common
     - if test "${OS_VERSION}" = "centos6"; then export METWORK_BUILD_OS=generic; else export METWORK_BUILD_OS=${OS_VERSION}; fi
     - if test -d /buildcache; then export BUILDCACHE=/buildcache; fi
     - mkdir -p /opt/metwork-mfext-$${TARGET_DIR}
-    - yum -y install metwork-mfext-layer-python3_scientific metwork-mfext-layer-python2_scientific
+    - yum -y install metwork-mfext-layer-python3_scientific metwork-mfext-layer-python2_scientific metwork-mfext-layer-python2_devtools
     - make
     - OUTPUT=`git status --short`
     - if test "$${OUTPUT}" != ""; then echo "ERROR non empty git status output $${OUTPUT}"; echo "git diff output"; git diff; exit 1; fi
