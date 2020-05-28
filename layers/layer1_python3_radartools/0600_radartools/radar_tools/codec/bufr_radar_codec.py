@@ -18,7 +18,7 @@ class BufrRadarCoDec(RadarCoDec):
 
     @classmethod
     def load_env_bufr(cls, env_demeter_table=None, env_demeter_image=None):
-        if env_demeter_table is None and 'DEMETER_TABLE'in os.environ:
+        if env_demeter_table is None and 'DEMETER_TABLE' in os.environ:
             env_demeter_table = os.environ['DEMETER_TABLE']
         if os.path.exists(env_demeter_table):
             os.environ['NEPpGbTables'] = env_demeter_table
@@ -35,7 +35,7 @@ class BufrRadarCoDec(RadarCoDec):
             else:
                 print('NEPpGbTables : ABSENT\n')
             cr = False
-        if env_demeter_image is None and 'DEMETER_IMAGE'in os.environ:
+        if env_demeter_image is None and 'DEMETER_IMAGE' in os.environ:
             env_demeter_image = os.environ['DEMETER_IMAGE']
         if os.path.exists(env_demeter_image):
             os.environ['DEMETER_IMAGE'] = env_demeter_image
