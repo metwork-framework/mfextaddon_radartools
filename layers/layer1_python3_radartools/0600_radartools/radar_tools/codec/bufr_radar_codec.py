@@ -6,7 +6,9 @@ from radar_tools.codec.data_bufr import DataBufr
 from radar_tools.codec.bufr_radar_footprint import BufrRadarFootPrint
 import json
 import os
-from demeter import BufrDataset, Descriptor, TableB
+from demeter import BufrDataset
+from demeter import Descriptor
+from demeter import TableB
 import logging
 
 log = logging.getLogger()
