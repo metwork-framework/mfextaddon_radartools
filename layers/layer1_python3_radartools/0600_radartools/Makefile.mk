@@ -18,7 +18,7 @@ all:: $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/radar_tools-0.0
 
 $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/radar_tools-0.0.1-py$(PYTHON3_SHORT_VERSION).egg:
 	$(MAKE) clean
-	layer_wrapper --layers=$(LAYER_NAME)@mfext -- python setup.py install --prefix=$(PREFIX)
+	layer_wrapper --layers=$(LAYER_NAME)@mfext -- unsafe_pip install --prefix=$(PREFIX) --src=$(PYTHON3_SITE_PACKAGES) . && rm -f $(PYTHON3_SITE_PACKAGES)/$(NAME)-$(VERSION).dist-info/direct_url.json
 
 test:
 	@echo "***** PYTHON TESTS *****"
