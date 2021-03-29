@@ -17,7 +17,7 @@ export WGETRC=$(shell pwd)/wgetrc
 
 all:: $(PREFIX)/lib/libcodes.so $(PREFIX)/share/tables $(PREFIX)/share/templates_pixmap
 $(PREFIX)/lib/libcodes.so:
-	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard download uncompress configure build install python3pyinstall
+	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard download uncompress configure build install python3pyinstall_pip
 
 $(PREFIX)/share/tables:
 	mkdir -p $@
