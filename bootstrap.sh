@@ -19,8 +19,10 @@ if test "${1:-}" = ""; then
     exit 1
 fi
 
+echo $1
 MFEXT_HOME=$(get_abs_filename "$1")
 export MFEXT_HOME
+echo ${MFEXT_HOME}
 MFEXT_VERSION=$(cat "${MFEXT_HOME}/config/version")
 export MFEXT_VERSION
 MFMODULE_VERSION=$("${MFEXT_HOME}/bin/guess_version.sh")
