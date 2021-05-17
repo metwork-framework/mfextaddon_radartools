@@ -1,13 +1,12 @@
 #!/bin/bash
-# automatically generated from https://github.com/metwork-framework/resources/blob/master/cookiecutter/_%7B%7Bcookiecutter.repo%7D%7D/mfxxx_run_integration_tests.sh template
+# automatically generated from https://github.com/metwork-framework/github_organization_management/blob/master/common_files/mfxxx_run_integration_tests.sh template
 
-list_rep=`ls|grep -v data`
+list_rep=$(ls -d */|grep -v data)
 if test -z "$list_rep"; then
     echo "There are no integration tests"
     exit 0
 fi
 
-ret=0
 for rep in $list_rep; do
     if [ -d $rep ]; then
         cd $rep
@@ -25,7 +24,7 @@ for rep in $list_rep; do
             echo "Tests not run on ${rep} because of missing layer(s) ${missing_layers}"
         else
             if test -s .layerapi2_dependencies; then
-                 LAYERS_TO_LOAD=`cat .layerapi2_dependencies |xargs |sed 's/ /,/g'` 
+                 LAYERS_TO_LOAD=`cat .layerapi2_dependencies |xargs |sed 's/ /,/g'`
                  WRAPPER=0
             else
                  WRAPPER=1
@@ -47,6 +46,14 @@ for rep in $list_rep; do
                         if test -s "${F}"; then
                             echo "===== 40 last lines of ${F} to debug ====="
                             tail -40 "${F}"
+                            echo ""
+                            echo ""
+                        fi
+                    done
+                    for F in ${MFMODULE_RUNTIME_HOME}/tmp/config_auto/nginx.conf ${MFMODULE_RUNTIME_HOME}/tmp/config_auto/circus.ini; do
+                        if test -f "${F}"; then
+                            echo "===== ${F} content to debug ====="
+                            cat "${F}"
                             echo ""
                             echo ""
                         fi
