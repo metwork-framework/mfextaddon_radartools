@@ -1,7 +1,7 @@
 | Name | Version | Layer |
 | --- | --- | --- |
-| [demeter-python](http://www.meteo.fr) | 1.0.0 | python2_radartools |
-| [demeter-python](http://www.meteo.fr) | 1.0.0 | python3_radartools |
+| [demeter](http://www.meteo.fr) | v2018.1.53.g08d929e | python2_radartools |
+| [demeter](http://www.meteo.fr) | v2018.1.53.g08d929e | python3_radartools |
 | [radartools](http://www.meteo.fr) | 0.0.1 | python2_radartools |
 | [radartools](http://www.meteo.fr) | 0.0.1 | python3_radartools |
 
