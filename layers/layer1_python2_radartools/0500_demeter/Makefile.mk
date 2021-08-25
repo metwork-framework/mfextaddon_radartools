@@ -18,6 +18,7 @@ export WGETRC=$(shell pwd)/wgetrc
 all:: $(PREFIX)/lib/libcodes.so $(PREFIX)/share/tables $(PREFIX)/share/templates_pixmap
 $(PREFIX)/lib/libcodes.so:
 	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard OPTIONS="--with-boost=$(PREFIX)/../scientific" download uncompress configure build install python2pyinstall
+	cd $(PREFIX)/bin && ln -s fcopy fcopyt && ln -s gcopy gcopyt
 
 $(PREFIX)/share/tables:
 	mkdir -p $@
