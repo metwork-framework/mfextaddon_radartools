@@ -1,22 +1,24 @@
 include ../../../adm/root.mk
 include $(MFEXT_HOME)/share/package.mk
 
-export NAME=demeter-python
-export VERSION=1.0.0
+export NAME=demeter
+export VERSION=v2018.1.53.g08d929e
 export EXTENSION=tar.gz
 export CHECKTYPE=MD5
-export CHECKSUM=27d96038b6f578c272fbbb6679d40a56
+export CHECKSUM=41d7ba64b53ec514d28d9afa0a75e23b
 DESCRIPTION=\
 	Demeter : DEcodeur METEo Rapide (en particulier pour le bufr)
 WEBSITE=http://www.meteo.fr
 LICENSE=meteo france
-SHORT_VERSION=1.0.0
+SHORT_VERSION=1.53
 
 export WGETRC=$(shell pwd)/wgetrc
 
+
 all:: $(PREFIX)/lib/libcodes.so $(PREFIX)/share/tables $(PREFIX)/share/templates_pixmap
 $(PREFIX)/lib/libcodes.so:
-	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard download uncompress configure build install python2pyinstall
+	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard OPTIONS="--with-boost=$(PREFIX)/../scientific" download uncompress configure build install python2pyinstall
+	cd $(PREFIX)/bin && ln -s fcopy fcopyt && ln -s gcopy gcopyt
 
 $(PREFIX)/share/tables:
 	mkdir -p $@
