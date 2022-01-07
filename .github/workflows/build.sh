@@ -19,7 +19,6 @@ rm -rf html_doc rpms .build_hash
     if test "${OS_VERSION}" = "centos8"; then export METWORK_BUILD_OS=generic; else export METWORK_BUILD_OS=${OS_VERSION}; fi
 
 
-
     yum install -y metwork-mfext-layer-python3_scientific-${BRANCH##release_} metwork-mfext-layer-python2_scientific-${BRANCH##release_} metwork-mfext-layer-python2_devtools-${BRANCH##release_}
 
 

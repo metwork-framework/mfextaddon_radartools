@@ -23,7 +23,6 @@ case "${GITHUB_EVENT_NAME}" in
         else
 
             OS_VERSION=centos8
-
         fi
         case "${GITHUB_BASE_REF}" in
             master | integration | experimental* | release_* | ci* | pci*)
@@ -37,7 +36,6 @@ case "${GITHUB_EVENT_NAME}" in
         else
 
             OS_VERSION=centos8
-
         fi
         case "${GITHUB_REF}" in
             refs/tags/v*)
