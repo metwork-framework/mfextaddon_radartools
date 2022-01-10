@@ -21,7 +21,6 @@ case "${GITHUB_EVENT_NAME}" in
         if [ -f .build_os ]; then
             OS_VERSION=`cat .build_os`
         else
-
             OS_VERSION=centos8
         fi
         case "${GITHUB_BASE_REF}" in
@@ -34,7 +33,6 @@ case "${GITHUB_EVENT_NAME}" in
         if [ -f .build_os ]; then
             OS_VERSION=`cat .build_os`
         else
-
             OS_VERSION=centos8
         fi
         case "${GITHUB_REF}" in
