@@ -85,6 +85,7 @@ jobs:
             mkdir -p ${REMOTE}
           scp: |
             '${LOCAL}/*' => ${REMOTE}
+
       - name: integration tests
         if: ${{ steps.SetVariables.outputs.branch != 'null' && steps.BuildStep.outputs.bypass == 'false' }}
         run: |
@@ -182,3 +183,4 @@ jobs:
         run: |
           sudo chown -R githubactions:metworkpub .
           sudo chmod -R 775 .
+
