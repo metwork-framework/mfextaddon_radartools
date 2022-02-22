@@ -14,9 +14,9 @@ clean::
 	rm -rf `find -name "__pycache__"`                                           
 	rm -rf tests/.coverage tests/coverage         
 
-all:: $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/radar_tools-0.0.1-py$(PYTHON3_SHORT_VERSION).egg
+all:: $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/radar_tools-0.0.1.dist-info
 
-$(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/radar_tools-0.0.1-py$(PYTHON3_SHORT_VERSION).egg:
+$(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/radar_tools-0.0.1.dist-info:
 	$(MAKE) clean
 	layer_wrapper --layers=$(LAYER_NAME)@mfext -- unsafe_pip install --prefix=$(PREFIX) --src=$(PYTHON3_SITE_PACKAGES) . && rm -f $(PYTHON3_SITE_PACKAGES)/$(NAME)-$(VERSION).dist-info/direct_url.json
 
