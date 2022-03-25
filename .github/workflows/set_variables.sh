@@ -65,6 +65,8 @@ if [ "${GITHUB_EVENT_NAME}" != "repository_dispatch" ]; then
             TARGET_DIR=${B##release_}
             SKIP_DISPATCH=true;;
         refs/pull/*)
+#No build on pull requests on these repositories
+            B=null
 case "${B}" in
                 integration | ci* | pci*)
                     DEP_BRANCH=integration
