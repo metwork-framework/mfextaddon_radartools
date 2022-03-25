@@ -11,6 +11,8 @@ Outils de conversion entre le tiffmf et le geotiff
 WEBSITE=http://www.meteo.fr
 LICENSE=meteo france
 
+export WGETRC=$(shell pwd)/wgetrc
+
 all:: $(PREFIX)/lib/libtiffmfutils.so
 $(PREFIX)/lib/libtiffmfutils.so:
 	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard PREFIX=$(PREFIX) OPTIONS="--with-geotiff=$(PREFIX)/../scientific_core" download uncompress configure build install
