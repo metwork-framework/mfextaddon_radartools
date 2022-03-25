@@ -11,6 +11,8 @@ Bibliotheque Meteo-France d'ecriture et lecture de fichiers au format TIFF-MF. C
 WEBSITE=http://www.meteo.fr
 LICENSE=meteo france
 
+export WGETRC=$(shell pwd)/wgetrc
+
 all:: $(PREFIX)/lib/libtiffmto.so
 $(PREFIX)/lib/libtiffmto.so:
 	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard PREFIX=$(PREFIX) download uncompress configure build install
