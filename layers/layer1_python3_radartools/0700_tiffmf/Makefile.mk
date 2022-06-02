@@ -2,10 +2,10 @@ include ../../../adm/root.mk
 include $(MFEXT_HOME)/share/package.mk
 
 export NAME=tiffmf
-export VERSION=1.0.1
+export VERSION=1.0.2
 export EXTENSION=tar.gz
 export CHECKTYPE=MD5
-export CHECKSUM=de5f7e1916b7c6209632f54bcc5d9aa9
+export CHECKSUM=66deb5f9201b89842d1c1d5c7972ebaf
 DESCRIPTION=\
 Bibliotheque Meteo-France d'ecriture et lecture de fichiers au format TIFF-MF. C'est une extension du format TIFF.
 WEBSITE=http://www.meteo.fr
