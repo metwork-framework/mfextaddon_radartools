@@ -2,7 +2,8 @@ include ../../../adm/root.mk
 include $(MFEXT_HOME)/share/package.mk
 
 export NAME=demeter
-export VERSION=v2018.1.53.g08d929e
+export VERSION=2018.1.53
+export EXPLICIT_NAME=$(NAME)-v$(VERSION).g08d929e
 export EXTENSION=tar.gz
 export CHECKTYPE=MD5
 export CHECKSUM=41d7ba64b53ec514d28d9afa0a75e23b
@@ -14,11 +15,9 @@ SHORT_VERSION=1.53
 
 export WGETRC=$(shell pwd)/wgetrc
 
-
 all:: $(PREFIX)/lib/libcodes.so $(PREFIX)/share/tables $(PREFIX)/share/templates_pixmap
 $(PREFIX)/lib/libcodes.so:
-	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard download uncompress configure build install python3pyinstall_pip
-	cd $(PREFIX)/bin && ln -s fcopy fcopyt && ln -s gcopy gcopyt
+	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard EXPLICIT_NAME="$(EXPLICIT_NAME)" download uncompress configure build install python3pyinstall_pip
 
 $(PREFIX)/share/tables:
 	mkdir -p $@
