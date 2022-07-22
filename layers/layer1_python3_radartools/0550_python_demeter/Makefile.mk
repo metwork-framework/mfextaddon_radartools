@@ -1,9 +1,9 @@
 include ../../../adm/root.mk
 include $(MFEXT_HOME)/share/package_python3.mk
 
-export NAME=demeter
+export NAME=python-demeter
 export VERSION=2022.0.2
-export EXPLICIT_NAME=python-demeter-v$(VERSION)
+export EXPLICIT_NAME=$(NAME)-v$(VERSION)
 export EXTENSION=tar.bz2
 export CHECKTYPE=MD5
 export CHECKSUM=9fcfbc42ed72ce9261be016d3c8be921
