@@ -3,7 +3,7 @@
 from unittest import TestCase
 import os
 import radar_tools.scripts.bufrtogeotiff as bufrtogeotiff
-import gdal
+from osgeo import gdal
 
 
 def get_data_folder():
