@@ -1,6 +1,6 @@
 #!/bin/env python
 # -*- coding: utf-8 -*-
-import gdal
+from osgeo import gdal
 import logging
 from radar_tools.codec.radar_codec import RadarCoDec
 
