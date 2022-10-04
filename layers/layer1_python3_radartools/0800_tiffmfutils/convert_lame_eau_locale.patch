@@ -1,0 +1,11 @@
+diff -up tiffmfutils-0.2.1/convert_lame_eau/convert_lame_eau.c.orig tiffmfutils-0.2.1/convert_lame_eau/convert_lame_eau.c
+--- tiffmfutils-0.2.1/convert_lame_eau/convert_lame_eau.c.orig	2022-10-04 09:00:03.910090959 +0000
++++ tiffmfutils-0.2.1/convert_lame_eau/convert_lame_eau.c	2022-10-04 09:01:44.236827427 +0000
+@@ -1,6 +1,7 @@
+ #include <cpl_string.h>
+ #include <glib.h>
+ #include <tiffmfutils.h>
++#include <locale.h>
+ 
+ const char *AppName = "convert_lame_eau";
+ static const char *VERSION_NAME = "0.2.0";
