@@ -103,26 +103,26 @@ fi
     
 
 
-echo "::set-output name=branch::${B}"
-echo "::set-output name=os::${OS_VERSION}"
-echo "::set-output name=tag::${TAG}"
-echo "::set-output name=dep_branch::${DEP_BRANCH}"
-echo "::set-output name=target_dir::${TARGET_DIR}"
-echo "::set-output name=dep_dir::${DEP_DIR}"
-echo "::set-output name=buildimage::metwork/mfxxx-${OS_VERSION}-buildimage:${DEP_BRANCH}"
-echo "::set-output name=testimage::metwork/mfxxx-${OS_VERSION}-testimage:${DEP_BRANCH}"
-echo "::set-output name=buildlog_dir::/pub/metwork/${CI}/buildlogs/${B}/mfextaddon_radartools/${OS_VERSION}/${GITHUB_RUN_NUMBER}"
-echo "::set-output name=skip_dispatch::${SKIP_DISPATCH}"
+echo "branch=${B}" >> ${GITHUB_OUTPUT}
+echo "os=${OS_VERSION}" >> ${GITHUB_OUTPUT}
+echo "tag=${TAG}" >> ${GITHUB_OUTPUT}
+echo "dep_branch=${DEP_BRANCH}" >> ${GITHUB_OUTPUT}
+echo "target_dir=${TARGET_DIR}" >> ${GITHUB_OUTPUT}
+echo "dep_dir=${DEP_DIR}" >> ${GITHUB_OUTPUT}
+echo "buildimage=metwork/mfxxx-${OS_VERSION}-buildimage:${DEP_BRANCH}" >> ${GITHUB_OUTPUT}
+echo "testimage=metwork/mfxxx-${OS_VERSION}-testimage:${DEP_BRANCH}" >> ${GITHUB_OUTPUT}
+echo "buildlog_dir=/pub/metwork/${CI}/buildlogs/${B}/mfextaddon_radartools/${OS_VERSION}/${GITHUB_RUN_NUMBER}" >> ${GITHUB_OUTPUT}
+echo "skip_dispatch=${SKIP_DISPATCH}" >> ${GITHUB_OUTPUT}
 
-echo "::set-output name=rpm_dir::/private/metwork_addons/${CI}/rpms/${B}/${OS_VERSION}"
-echo "::set-output name=doc_dir::/private/metwork_addons/${CI}/docs/${B}/mfextaddon_radartools"
+echo "rpm_dir=/private/metwork_addons/${CI}/rpms/${B}/${OS_VERSION}" >> ${GITHUB_OUTPUT}
+echo "doc_dir=/private/metwork_addons/${CI}/docs/${B}/mfextaddon_radartools" >> ${GITHUB_OUTPUT}
 if [ "${CI}" == "continuous_integration" ]; then
   case "${B}" in
     master | release_*)
-      echo "::set-output name=nexus_dir::https://artifacts.cloudmf.dev/repository/rpm-snapshots-metwork-addons/${B}/${OS_VERSION}/";;
+      echo "nexus_dir=https://artifacts.cloudmf.dev/repository/rpm-snapshots-metwork-addons/${B}/${OS_VERSION}/" >> ${GITHUB_OUTPUT}
     *)
-      echo "::set-output name=nexus_dir::null";;
+      echo "nexus_dir=null" >> ${GITHUB_OUTPUT}
   esac
 else
-      echo "::set-output name=nexus_dir::https://artifacts.cloudmf.dev/repository/rpm-releases-metwork-addons/${B}/${OS_VERSION}/";
+      echo "nexus_dir=https://artifacts.cloudmf.dev/repository/rpm-releases-metwork-addons/${B}/${OS_VERSION}/" >> ${GITHUB_OUTPUT}
 fi
