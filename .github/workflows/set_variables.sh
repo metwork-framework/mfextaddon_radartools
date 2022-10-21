@@ -119,9 +119,9 @@ echo "doc_dir=/private/metwork_addons/${CI}/docs/${B}/mfextaddon_radartools" >> 
 if [ "${CI}" == "continuous_integration" ]; then
   case "${B}" in
     master | release_*)
-      echo "nexus_dir=https://artifacts.cloudmf.dev/repository/rpm-snapshots-metwork-addons/${B}/${OS_VERSION}/" >> ${GITHUB_OUTPUT}
+      echo "nexus_dir=https://artifacts.cloudmf.dev/repository/rpm-snapshots-metwork-addons/${B}/${OS_VERSION}/" >> ${GITHUB_OUTPUT};;
     *)
-      echo "nexus_dir=null" >> ${GITHUB_OUTPUT}
+      echo "nexus_dir=null" >> ${GITHUB_OUTPUT};;
   esac
 else
       echo "nexus_dir=https://artifacts.cloudmf.dev/repository/rpm-releases-metwork-addons/${B}/${OS_VERSION}/" >> ${GITHUB_OUTPUT}
