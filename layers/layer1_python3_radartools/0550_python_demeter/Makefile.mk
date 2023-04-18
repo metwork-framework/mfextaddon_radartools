@@ -14,8 +14,8 @@ LICENSE=meteo france
 
 export WGETRC=$(shell pwd)/wgetrc
 
-all:: $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-2022.0.2-py3.10-linux-x86_64.egg
-$(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-2022.0.2-py3.10-linux-x86_64.egg:
+all:: $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-2022.0.2-py$(PYTHON3_SHORT_VERSION)-linux-x86_64.egg
+$(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-2022.0.2-py$(PYTHON3_SHORT_VERSION)-linux-x86_64.egg:
 	mkdir -p $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages
 	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard EXPLICIT_NAME="$(EXPLICIT_NAME)" download uncompress python3build python3install
-	cd $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-2022.0.2-py3.10-linux-x86_64.egg && cp -R demeter .. && cp -R EGG-INFO ../python_demeter-2022.0.2-py3.10-linux-x86_64.egg-info
+	cd $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-2022.0.2-py$(PYTHON3_SHORT_VERSION)-linux-x86_64.egg && cp -R demeter .. && cp -R EGG-INFO ../python_demeter-2022.0.2-py$(PYTHON3_SHORT_VERSION)-linux-x86_64.egg-info
