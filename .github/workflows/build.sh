@@ -22,7 +22,7 @@ rm -rf html_doc rpms .build_hash
     yum install -y metwork-mfext-layer-python3_scientific-${BRANCH##release_}
 
 
-
+git config --global --add safe.directory /src
 cd /src
 
 
