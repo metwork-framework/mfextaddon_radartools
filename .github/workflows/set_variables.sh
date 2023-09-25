@@ -113,16 +113,6 @@ echo "buildimage=metwork/mfxxx-${OS_VERSION}-buildimage:${DEP_BRANCH}" >> ${GITH
 echo "testimage=metwork/mfxxx-${OS_VERSION}-testimage:${DEP_BRANCH}" >> ${GITHUB_OUTPUT}
 echo "buildlog_dir=/pub/metwork/${CI}/buildlogs/${B}/mfextaddon_radartools/${OS_VERSION}/${GITHUB_RUN_NUMBER}" >> ${GITHUB_OUTPUT}
 echo "skip_dispatch=${SKIP_DISPATCH}" >> ${GITHUB_OUTPUT}
-
-echo "rpm_dir=/private/metwork_addons/${CI}/rpms/${B}/${OS_VERSION}" >> ${GITHUB_OUTPUT}
-echo "doc_dir=/private/metwork_addons/${CI}/docs/${B}/mfextaddon_radartools" >> ${GITHUB_OUTPUT}
-if [ "${CI}" == "continuous_integration" ]; then
-  case "${B}" in
-    master | release_*)
-      echo "nexus_dir=https://artifacts.cloudmf.dev/repository/rpm-snapshots-metwork-addons/${B}/${OS_VERSION}/" >> ${GITHUB_OUTPUT};;
-    *)
-      echo "nexus_dir=null" >> ${GITHUB_OUTPUT};;
-  esac
-else
-      echo "nexus_dir=https://artifacts.cloudmf.dev/repository/rpm-releases-metwork-addons/${B}/${OS_VERSION}/" >> ${GITHUB_OUTPUT}
-fi
+echo "rpm_dir=/pub/metwork/${CI}/rpms/${B}/${OS_VERSION}" >> ${GITHUB_OUTPUT}
+echo "doc_dir=/pub/metwork/${CI}/docs/${B}/mfextaddon_radartools" >> ${GITHUB_OUTPUT}
+echo "nexus_dir=null" >> ${GITHUB_OUTPUT}
