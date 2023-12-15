@@ -1,5 +1,9 @@
 # release_2.1 CHANGELOG
 
+## v2.1.2 (2023-08-31)
+
+- No interesting change
+
 ## v2.1.1 (2023-03-06)
 
 - No interesting change
