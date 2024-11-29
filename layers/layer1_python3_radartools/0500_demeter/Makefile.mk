@@ -2,11 +2,11 @@ include ../../../adm/root.mk
 include $(MFEXT_HOME)/share/package.mk
 
 export NAME=demeter
-export VERSION=2022.0.1
+export VERSION=2023.0.0
 export EXPLICIT_NAME=$(NAME)-v$(VERSION)
 export EXTENSION=tar.bz2
 export CHECKTYPE=MD5
-export CHECKSUM=f09b3de7a365af553f31e582415b6dd4
+export CHECKSUM=8e8a7191cd93f33de890180440ac6872
 DESCRIPTION=\
 	Demeter : DEcodeur METEo Rapide (en particulier pour le bufr)
 WEBSITE=http://www.meteo.fr
