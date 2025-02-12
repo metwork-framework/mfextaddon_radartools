@@ -15,4 +15,4 @@ export WGETRC=$(shell pwd)/wgetrc
 
 all:: $(PREFIX)/lib/libtiffmfutils.so
 $(PREFIX)/lib/libtiffmfutils.so:
-	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard PREFIX=$(PREFIX) OPTIONS="--with-geotiff=$(PREFIX)/../scientific_core" download uncompress configure build install
+	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard EXTRACFLAGS="-I$(PREFIX)/../core/include" PREFIX=$(PREFIX) OPTIONS="--with-geotiff=$(PREFIX)/../scientific_core" download uncompress configure build install
