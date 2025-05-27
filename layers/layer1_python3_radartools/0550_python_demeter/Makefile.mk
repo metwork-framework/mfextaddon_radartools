@@ -14,7 +14,9 @@ LICENSE=meteo france
 
 export WGETRC=$(shell pwd)/wgetrc
 
-all:: $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-$(VERSION)-py$(PYTHON3_SHORT_VERSION).egg-info
-$(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-$(VERSION)-py$(PYTHON3_SHORT_VERSION).egg-info:
+all:: $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-$(VERSION).dist-info
+$(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages/python_demeter-$(VERSION).dist-info:
 	mkdir -p $(PREFIX)/lib/python$(PYTHON3_SHORT_VERSION)/site-packages
-	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard EXPLICIT_NAME="$(EXPLICIT_NAME)" download uncompress python3build python3install
+	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard EXPLICIT_NAME="$(EXPLICIT_NAME)" download uncompress
+	cp pyproject.toml build/$(EXPLICIT_NAME)
+	$(MAKE) --file=$(MFEXT_HOME)/share/Makefile.standard EXPLICIT_NAME="$(EXPLICIT_NAME)" python3install_pip
