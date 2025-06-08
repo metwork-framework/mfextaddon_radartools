@@ -1,5 +1,11 @@
 # release_2.0 CHANGELOG
 
+## [Unreleased]
+
+### New Features
+
+- remove layer python2_radartools
+
 ## v2.0.4 (2023-12-15)
 
 - No interesting change
