@@ -1,0 +1,14 @@
+diff -up demeter-v2018.1.53.g08d929e/configure.orig demeter-v2018.1.53.g08d929e/configure
+--- demeter-v2018.1.53.g08d929e/configure.orig	2026-08-29 17:06:49.143495481 +0000
++++ demeter-v2018.1.53.g08d929e/configure	2026-08-29 17:07:21.773543589 +0000
+@@ -587,8 +587,8 @@ MAKEFLAGS=
+ # Identity of this package.
+ PACKAGE_NAME='Demeter'
+ PACKAGE_TARNAME='demeter'
+-PACKAGE_VERSION='v2018.1.53.g08d929e'
+-PACKAGE_STRING='Demeter v2018.1.53.g08d929e'
++PACKAGE_VERSION='2018.1.53'
++PACKAGE_STRING='Demeter 2018.1.53'
+ PACKAGE_BUGREPORT=''
+ PACKAGE_URL=''
+ 
