@@ -19,10 +19,10 @@ rm -rf html_doc rpms .build_hash
 
 case "${BRANCH}" in
     ci* | pci*)
-	export DEP_BRANCH=integration
+        export DEP_BRANCH=integration
     *)
-	export DEP_BRANCH=${BRANCH}
-esac;;
+        export DEP_BRANCH=${BRANCH}
+esac
 
     yum install -y boost-devel
     yum install -y metwork-mfext-layer-python3_scientific-${DEP_BRANCH##release_}
