@@ -5,5 +5,6 @@
 ### New Features
 
 - build python_demeter and radartools with pyproject.toml
+- add patch to build with gcc 14
 
 
