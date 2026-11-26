@@ -1,0 +1,614 @@
+diff -up tiffmf-1.0.2/src/gribscms.c.orig tiffmf-1.0.2/src/gribscms.c
+--- tiffmf-1.0.2/src/gribscms.c.orig	2026-11-23 11:35:25.215411731 +0000
++++ tiffmf-1.0.2/src/gribscms.c	2026-11-23 11:25:34.483068995 +0000
+@@ -9,49 +9,6 @@
+ #include <stdio.h>
+ 
+ /*===================================================================*/
+- PUBLIC RETURN_CODE GribsCmsGrpAdd(dirname, grpname) 
+-/*===================================================================*/
+-char *dirname;
+-char *grpname;
+-{
+-  int i;
+-  FILE *fds, *fdp;
+-  int len;
+-  char *fname;
+-
+-fprintf (stderr,"GribsCmsGrpAdd\n");
+-
+-  if ( ggribs.ngrp < GRIBS_MAX_GRP ) {
+-
+-     i = ggribs.ngrp;
+-     ggribs.grp[i].igrp = i; 
+-     ggribs.grp[i].name = grpname; 
+-
+-     len = strlen(dirname) + 1 + strlen(grpname) + 1 + 3 + 1;
+-     fname = MALLOCN( len, char );
+-     strcpy( fname, dirname );
+-     strcat( fname, "/");
+-     strcat( fname, grpname );
+-     strcat( fname, ".SAT" );
+-     fds = fopen( fname, "r" );
+-     strcpy( fname, dirname );
+-     strcat( fname, "/");
+-     strcat( fname, grpname );
+-     strcat( fname, ".PRD" );
+-     fdp = fopen( fname, "r" );
+-     GribsCmsGrpRead( fds, fdp, &ggribs.grp[i] );
+-     fclose(fds);
+-     fclose(fdp);
+-   
+-     ggribs.ngrp++;
+-     return( RETURN_OK );
+-  }
+-  else {
+-    return( RETURN_ERR );
+-  }
+-}
+-
+-/*===================================================================*/
+  PUBLIC GribsCmsGrp *GribsCmsNameToGrp(name) 
+ /*===================================================================*/
+ char *name;
+@@ -179,7 +136,7 @@ int band;
+ }
+ 
+ /*===================================================================*/
+- RETURN_CODE GribsCmsGrpRead(fds, fdp , grp) 
++ PUBLIC RETURN_CODE GribsCmsGrpRead(fds, fdp , grp) 
+ /*===================================================================*/
+ FILE *fds;
+ FILE *fdp;
+@@ -234,5 +191,49 @@ GribsCmsGrp *grp;
+  
+ }
+ 
++/*===================================================================*/
++ PUBLIC RETURN_CODE GribsCmsGrpAdd(dirname, grpname) 
++/*===================================================================*/
++char *dirname;
++char *grpname;
++{
++  int i;
++  FILE *fds, *fdp;
++  int len;
++  char *fname;
++
++fprintf (stderr,"GribsCmsGrpAdd\n");
++
++  if ( ggribs.ngrp < GRIBS_MAX_GRP ) {
++
++     i = ggribs.ngrp;
++     ggribs.grp[i].igrp = i; 
++     ggribs.grp[i].name = grpname; 
++
++     len = strlen(dirname) + 1 + strlen(grpname) + 1 + 3 + 1;
++     fname = MALLOCN( len, char );
++     strcpy( fname, dirname );
++     strcat( fname, "/");
++     strcat( fname, grpname );
++     strcat( fname, ".SAT" );
++     fds = fopen( fname, "r" );
++     strcpy( fname, dirname );
++     strcat( fname, "/");
++     strcat( fname, grpname );
++     strcat( fname, ".PRD" );
++     fdp = fopen( fname, "r" );
++     GribsCmsGrpRead( fds, fdp, &ggribs.grp[i] );
++     fclose(fds);
++     fclose(fdp);
++   
++     ggribs.ngrp++;
++     return( RETURN_OK );
++  }
++  else {
++    return( RETURN_ERR );
++  }
++}
++
++
+ 
+ 
+diff -up tiffmf-1.0.2/src/gribsgen.c.orig tiffmf-1.0.2/src/gribsgen.c
+--- tiffmf-1.0.2/src/gribsgen.c.orig	2026-11-23 11:35:25.217411732 +0000
++++ tiffmf-1.0.2/src/gribsgen.c	2026-11-23 11:27:18.361127088 +0000
+@@ -7,6 +7,80 @@
+ #include <stdio.h>
+ #include <string.h>
+ 
++/*===================================================================*/
++  PUBLIC RETURN_CODE GribsEncodeInt(n,i,b)
++/*===================================================================*/
++int n;
++int i;
++BYTE *b;
++{
++  int q, r;
++
++  if ( n == 1 ) {
++    *b = i;
++    return( RETURN_OK);
++  }
++  else {
++    q = i / 256;
++    r = i % 256;
++    b[n-1] = r;
++  GribsEncodeInt(n-1,q,b); 
++  }
++}
++
++/*===================================================================*/
++ PUBLIC RETURN_CODE GribsDecodeInt(n,i,b)
++/*===================================================================*/
++int n;
++int *i;
++BYTE *b;
++{
++  int j;
++  
++  *i=0;
++  for(j=0; j<n; j++) {
++    *i = 256 * *i + b[j]; 
++  }
++
++  return(RETURN_OK);
++}
++
++/*===================================================================*/
++ PUBLIC RETURN_CODE GribsEncodeIntSign(n,i,b)
++/*===================================================================*/
++int n;
++int i;
++BYTE *b;
++{
++  if ( i >= 0  ) {
++    GribsEncodeInt(n,i,b);
++  }
++  else {
++    GribsEncodeInt(n,-i,b);
++    b[0] = 0x80 | b[0];
++  }
++  return( RETURN_OK );
++}
++
++/*===================================================================*/
++ PUBLIC RETURN_CODE GribsDecodeIntSign(n,i,b)
++/*===================================================================*/
++int n;
++int *i;
++BYTE *b;
++{
++
++  if ( (b[0] & 0x80) == 0x80 ) {
++    b[0] = b[0] & 0x7f;
++    GribsDecodeInt(n,i,b);
++    *i= - *i;
++    b[0] = b[0] | 0x80;
++  }
++  else {
++    return ( GribsDecodeInt(n,i,b) );
++  }
++}
++
+ #define GRIBS_SET(p) ptr=p
+ #define GRIBS_ENCODE_INT(n,v) GribsEncodeInt(n,v,ptr); ptr+=n
+ #define GRIBS_ENCODE_INS(n,v) GribsEncodeIntSign(n,v,ptr); ptr+=n
+@@ -19,6 +93,28 @@
+ PUBLIC GribsGrp ggribs;
+ 
+ /*===================================================================*/
++ PUBLIC RETURN_CODE GribsDecodeSection0(section0, buf) 
++/*===================================================================*/
++GribsSection0 *section0;
++BYTE **buf;
++{
++  BYTE *ptr;
++
++  static char ascii_GRIB[4];  
++
++  GRIBS_SET( *buf );
++  GRIBS_DECODE_BYT(4, ascii_GRIB);
++  if ( strcmp( "GRIB", ascii_GRIB ) != 0 ) {
++    return( RETURN_ERR );
++  }
++  GRIBS_DECODE_INT(3, &section0->length );
++  GRIBS_DECODE_INT(1, &section0->edition);
++  GRIBS_GET( *buf );
++
++  return ( RETURN_OK );
++}
++
++/*===================================================================*/
+  PUBLIC BYTE *GribsRead(fd) 
+ /*===================================================================*/
+ FILE *fd;
+@@ -90,28 +186,6 @@ BYTE **buf;
+ }
+ 
+ /*===================================================================*/
+- PUBLIC RETURN_CODE GribsDecodeSection0(section0, buf) 
+-/*===================================================================*/
+-GribsSection0 *section0;
+-BYTE **buf;
+-{
+-  BYTE *ptr;
+-
+-  static char ascii_GRIB[4];  
+-
+-  GRIBS_SET( *buf );
+-  GRIBS_DECODE_BYT(4, ascii_GRIB);
+-  if ( strcmp( "GRIB", ascii_GRIB ) != 0 ) {
+-    return( RETURN_ERR );
+-  }
+-  GRIBS_DECODE_INT(3, &section0->length );
+-  GRIBS_DECODE_INT(1, &section0->edition);
+-  GRIBS_GET( *buf );
+-
+-  return ( RETURN_OK );
+-}
+-
+-/*===================================================================*/
+  PUBLIC RETURN_CODE GribsEncodeSection1(section1, buf) 
+ /*===================================================================*/
+ GribsSection1 *section1;
+@@ -608,77 +682,3 @@ BYTE **buf;
+   return( RETURN_OK );
+ }
+ 
+-/*===================================================================*/
+- RETURN_CODE GribsEncodeIntSign(n,i,b)
+-/*===================================================================*/
+-int n;
+-int i;
+-BYTE *b;
+-{
+-  if ( i >= 0  ) {
+-    GribsEncodeInt(n,i,b);
+-  }
+-  else {
+-    GribsEncodeInt(n,-i,b);
+-    b[0] = 0x80 | b[0];
+-  }
+-  return( RETURN_OK );
+-}
+-
+-/*===================================================================*/
+- RETURN_CODE GribsDecodeIntSign(n,i,b)
+-/*===================================================================*/
+-int n;
+-int *i;
+-BYTE *b;
+-{
+-
+-  if ( (b[0] & 0x80) == 0x80 ) {
+-    b[0] = b[0] & 0x7f;
+-    GribsDecodeInt(n,i,b);
+-    *i= - *i;
+-    b[0] = b[0] | 0x80;
+-  }
+-  else {
+-    return ( GribsDecodeInt(n,i,b) );
+-  }
+-}
+-
+-/*===================================================================*/
+- RETURN_CODE GribsEncodeInt(n,i,b)
+-/*===================================================================*/
+-int n;
+-int i;
+-BYTE *b;
+-{
+-  int q, r;
+-
+-  if ( n == 1 ) {
+-    *b = i;
+-    return( RETURN_OK);
+-  }
+-  else {
+-    q = i / 256;
+-    r = i % 256;
+-    b[n-1] = r;
+-  GribsEncodeInt(n-1,q,b); 
+-  }
+-}
+-
+-/*===================================================================*/
+- RETURN_CODE GribsDecodeInt(n,i,b)
+-/*===================================================================*/
+-int n;
+-int *i;
+-BYTE *b;
+-{
+-  int j;
+-  
+-  *i=0;
+-  for(j=0; j<n; j++) {
+-    *i = 256 * *i + b[j]; 
+-  }
+-
+-  return(RETURN_OK);
+-}
+-
+diff -up tiffmf-1.0.2/src/gribsvue.c.orig tiffmf-1.0.2/src/gribsvue.c
+--- tiffmf-1.0.2/src/gribsvue.c.orig	2026-11-23 11:35:25.220411734 +0000
++++ tiffmf-1.0.2/src/gribsvue.c	2026-11-23 11:27:18.362127088 +0000
+@@ -10,6 +10,7 @@
+ #include <math.h>
+ 
+ #include <protos.h>
++#include <gribsvue.h>
+ 
+ /*===================================================================*/
+ #if defined(__STRICT_ANSI__)
+diff -up tiffmf-1.0.2/src/gribsvue.h.orig tiffmf-1.0.2/src/gribsvue.h
+--- tiffmf-1.0.2/src/gribsvue.h.orig	2026-11-23 11:35:25.222411735 +0000
++++ tiffmf-1.0.2/src/gribsvue.h	2026-11-23 11:27:18.364127089 +0000
+@@ -0,0 +1,25 @@
++extern RETURN_CODE GribsDefineSection0(int size2, int size4, GribsSection0 *section0);
++extern RETURN_CODE GribsEncodeSection0(GribsSection0 *section0, BYTE **buf);
++extern RETURN_CODE GribsEncodeSection1(GribsSection1 *section1, BYTE **buf);
++extern RETURN_CODE GribsEncodeSection2Header(GribsSection2Header *header, BYTE **buf);
++extern RETURN_CODE GribsEncodeSection2Cylindrical(GribsSection2Cylindrical *cylindrical, BYTE **buf);
++extern RETURN_CODE GribsEncodeSection2Mercator(GribsSection2Mercator *mercator, BYTE **buf);
++extern RETURN_CODE GribsEncodeSection2Cylindrical(GribsSection2Cylindrical *cylindrical, BYTE **buf);
++extern RETURN_CODE GribsEncodeSection2PolarStereo(GribsSection2PolarStereo *polarstereo, BYTE **buf);
++extern RETURN_CODE GribsEncodeSection2SpaceView(GribsSection2SpaceView *spaceview, BYTE **buf);
++extern RETURN_CODE GribsEncodeSection4Header(GribsSection4Header *header, BYTE **buf);
++extern RETURN_CODE GribsPackByte(long nword, int nbits, BYTE *src, BYTE *dst);
++extern RETURN_CODE GribsEncodeSection5( BYTE **buf);
++extern RETURN_CODE GribsPrdToSection1(GribsPrd *prd, GribsSection1 *section1);
++extern RETURN_CODE GribsDecodeSection0(GribsSection0 *section0, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection1(GribsSection1 *section1, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection2Header(GribsSection2Header *header, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection2Cylindrical(GribsSection2Cylindrical *cylindrical, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection2Mercator(GribsSection2Mercator *mercator, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection2Cylindrical(GribsSection2Cylindrical *cylindrical, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection2PolarStereo(GribsSection2PolarStereo *polarstereo, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection2SpaceView(GribsSection2SpaceView *spaceview, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection2Lambert(GribsSection2Lambert *lambert, BYTE **buf);
++extern RETURN_CODE GribsDecodeSection4Header(GribsSection4Header *header, BYTE **buf);
++extern RETURN_CODE GribsSection1ToPrd(GribsSection1 *section1, GribsPrd *prd);
++extern RETURN_CODE GribsUnpackByte(long nword, int nbits, BYTE *src, BYTE *dst);
+diff -up tiffmf-1.0.2/src/Makefile.am.orig tiffmf-1.0.2/src/Makefile.am
+--- tiffmf-1.0.2/src/Makefile.am.orig	2026-11-23 11:35:25.225411737 +0000
++++ tiffmf-1.0.2/src/Makefile.am	2026-11-23 11:27:18.371127094 +0000
+@@ -31,6 +31,7 @@ tiffmf_includedir = $(includedir)/tiffmf
+ tiffmf_include_HEADERS = \
+ 	gribs.h \
+ 	gribs2.h \
++	gribsvue.h \
+ 	mtotiffio.h \
+ 	mtotiffiop.h \
+ 	prj.h \
+diff -up tiffmf-1.0.2/src/Makefile.in.orig tiffmf-1.0.2/src/Makefile.in
+--- tiffmf-1.0.2/src/Makefile.in.orig	2026-11-23 11:35:25.227411738 +0000
++++ tiffmf-1.0.2/src/Makefile.in	2026-11-23 11:27:18.373127095 +0000
+@@ -373,6 +373,7 @@ libtiffmto_la_SOURCES = \
+ tiffmf_includedir = $(includedir)/tiffmf
+ tiffmf_include_HEADERS = \
+ 	gribs.h \
++	gribsvue.h \
+ 	gribs2.h \
+ 	mtotiffio.h \
+ 	mtotiffiop.h \
+diff -up tiffmf-1.0.2/src/prjdom.c.orig tiffmf-1.0.2/src/prjdom.c
+--- tiffmf-1.0.2/src/prjdom.c.orig	2026-11-23 11:35:25.229411739 +0000
++++ tiffmf-1.0.2/src/prjdom.c	2026-11-23 11:27:18.366127091 +0000
+@@ -8,6 +8,9 @@
+ 
+ #include <stdio.h>
+ 
++extern BOOLEAN PrjIdem(Prj *prj1, Prj *prj2);
++extern Dom *DomXmlRead (FILE * fd);
++
+ /*======================================================================*/
+  PUBLIC BOOLEAN DomIdem(dom1, dom2)
+ /*======================================================================*/
+diff -up tiffmf-1.0.2/src/prjgen.c.orig tiffmf-1.0.2/src/prjgen.c
+diff -up tiffmf-1.0.2/src/prjgen.h.orig tiffmf-1.0.2/src/prjgen.h
+--- tiffmf-1.0.2/src/prjgen.h.orig	2026-11-23 11:35:25.234411742 +0000
++++ tiffmf-1.0.2/src/prjgen.h	2026-11-23 11:27:18.369127092 +0000
+@@ -38,4 +38,12 @@ extern RETURN_CODE PrjLambertWrite();
+ extern RETURN_CODE PrjGnomonicWrite();
+ extern RETURN_CODE PrjTransMercatorWrite();
+ 
++extern RETURN_CODE PrjPolarStereoDestroy();
++extern RETURN_CODE PrjCylindricalDestroy();
++extern RETURN_CODE PrjMercatorDestroy();
++extern RETURN_CODE PrjSpaceViewDestroy();
++extern RETURN_CODE PrjRadarDestroy();
++extern RETURN_CODE PrjLambertDestroy();
++extern RETURN_CODE PrjSpherePolarStereoDestroy();
++
+ #endif
+diff -up tiffmf-1.0.2/src/prjvue.c.orig tiffmf-1.0.2/src/prjvue.c
+--- tiffmf-1.0.2/src/prjvue.c.orig	2026-11-23 11:35:25.236411743 +0000
++++ tiffmf-1.0.2/src/prjvue.c	2026-11-23 11:27:18.377127097 +0000
+@@ -13,6 +13,86 @@
+ #define PRJ_LINEAR(x1,y1,x2,y2,a,b) a = ((y2)-(y1)) / ((x2)-(x1)); b = (y1) - a * (x1)
+ 
+ /*======================================================================*/
++ PUBLIC RETURN_CODE VueXToI(vue, x, i) 
++/*======================================================================*/
++Vue *vue;
++double x;
++double *i;
++{
++VueKernel *kernel;
++
++kernel = (VueKernel *) vue->kernel;
++*i = kernel->aXToI * x + kernel->bXToI;
++return(RETURN_OK);
++}
++
++/*======================================================================*/
++ PUBLIC RETURN_CODE VueYToJ(vue, y, j) 
++/*======================================================================*/
++Vue *vue;
++double y;
++double *j;
++{
++VueKernel *kernel;
++
++kernel = (VueKernel *) vue->kernel;
++*j = kernel->aYToJ * y + kernel->bYToJ;
++return(RETURN_OK);
++}
++
++/*======================================================================*/
++ PUBLIC RETURN_CODE VueXYToIJ(vue, x, y, i, j) 
++/*======================================================================*/
++Vue *vue;
++double x,y;
++double *i, *j;
++{
++VueXToI(vue,x,i);
++VueYToJ(vue,y,j);
++return(RETURN_OK);
++}
++
++/*======================================================================*/
++ PUBLIC RETURN_CODE VueIToX(vue, i, x) 
++/*======================================================================*/
++Vue *vue;
++double i;
++double *x;
++{
++VueKernel *kernel;
++
++kernel = (VueKernel *) vue->kernel;
++*x = kernel->aIToX * i + kernel->bIToX;
++return(RETURN_OK);
++}
++
++/*======================================================================*/
++ PUBLIC RETURN_CODE VueJToY(vue,j, y) 
++/*======================================================================*/
++Vue *vue;
++double j;
++double *y;
++{
++VueKernel *kernel;
++
++kernel = (VueKernel *) vue->kernel;
++*y = kernel->aJToY * j + kernel->bJToY;
++return(RETURN_OK);
++}
++
++/*======================================================================*/
++ PUBLIC RETURN_CODE VueIJToXY(vue, i, j, x, y) 
++/*======================================================================*/
++Vue *vue;
++double i, j;
++double *x, *y;
++{
++VueIToX(vue,i,x);
++VueJToY(vue,j,y);
++return(RETURN_OK);
++}
++
++/*======================================================================*/
+  PUBLIC BOOLEAN VueIdem(vue1, vue2)
+ /*======================================================================*/
+ Vue *vue1, *vue2;
+@@ -328,86 +408,6 @@ double *x,*y;
+   }
+ }
+ 
+-/*======================================================================*/
+- PUBLIC RETURN_CODE VueXToI(vue, x, i) 
+-/*======================================================================*/
+-Vue *vue;
+-double x;
+-double *i;
+-{
+-VueKernel *kernel;
+-
+-kernel = (VueKernel *) vue->kernel;
+-*i = kernel->aXToI * x + kernel->bXToI;
+-return(RETURN_OK);
+-}
+-
+-/*======================================================================*/
+- PUBLIC RETURN_CODE VueYToJ(vue, y, j) 
+-/*======================================================================*/
+-Vue *vue;
+-double y;
+-double *j;
+-{
+-VueKernel *kernel;
+-
+-kernel = (VueKernel *) vue->kernel;
+-*j = kernel->aYToJ * y + kernel->bYToJ;
+-return(RETURN_OK);
+-}
+-
+-/*======================================================================*/
+- PUBLIC RETURN_CODE VueXYToIJ(vue, x, y, i, j) 
+-/*======================================================================*/
+-Vue *vue;
+-double x,y;
+-double *i, *j;
+-{
+-VueXToI(vue,x,i);
+-VueYToJ(vue,y,j);
+-return(RETURN_OK);
+-}
+-
+-/*======================================================================*/
+- PUBLIC RETURN_CODE VueIToX(vue, i, x) 
+-/*======================================================================*/
+-Vue *vue;
+-double i;
+-double *x;
+-{
+-VueKernel *kernel;
+-
+-kernel = (VueKernel *) vue->kernel;
+-*x = kernel->aIToX * i + kernel->bIToX;
+-return(RETURN_OK);
+-}
+-
+-/*======================================================================*/
+- PUBLIC RETURN_CODE VueJToY(vue,j, y) 
+-/*======================================================================*/
+-Vue *vue;
+-double j;
+-double *y;
+-{
+-VueKernel *kernel;
+-
+-kernel = (VueKernel *) vue->kernel;
+-*y = kernel->aJToY * j + kernel->bJToY;
+-return(RETURN_OK);
+-}
+-
+-/*======================================================================*/
+- PUBLIC RETURN_CODE VueIJToXY(vue, i, j, x, y) 
+-/*======================================================================*/
+-Vue *vue;
+-double i, j;
+-double *x, *y;
+-{
+-VueIToX(vue,i,x);
+-VueJToY(vue,j,y);
+-return(RETURN_OK);
+-}
+-
+ /*==========================================================================*/
+  PUBLIC RETURN_CODE VueCtbParam(vue1, vue2, x, y, width, height, ax, bx, ay, by) 
+ /*==========================================================================*/
+diff -up tiffmf-1.0.2/src/prjvue.h.orig tiffmf-1.0.2/src/prjvue.h
+--- tiffmf-1.0.2/src/prjvue.h.orig	2026-11-23 11:35:25.239411745 +0000
++++ tiffmf-1.0.2/src/prjvue.h	2026-11-23 11:27:18.375127096 +0000
+@@ -11,6 +11,9 @@
+ #include <stdcms.h>
+ #include <prj.h>
+ 
++extern BOOLEAN DomIdem(Dom *dom1, Dom *dom2);
++extern BOOLEAN PrjIdem(Prj *prj1, Prj *prj2);
++
+ PRIVATE char sccs_id_prjvue[]="@(#)libprj (vue) version 2.9 11/27/97 Gerard LEGENDRE METEO-FRANCE";
+ 
+ 
